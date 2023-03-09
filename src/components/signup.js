@@ -1,14 +1,20 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
-import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import * as Yup from "yup";
 import { makeStyles } from "@mui/styles";
 import { useFormik } from "formik";
-import "../styles/login.css";
+import "../styles/signupPage.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
+//icons:
+import InputAdornment from '@mui/material/InputAdornment';
+import AttachEmailIcon from '@mui/icons-material/AttachEmail';
+import PersonIcon from '@mui/icons-material/Person';
+import NumbersIcon from '@mui/icons-material/Numbers';
+import SchoolIcon from '@mui/icons-material/School';
+import KeyIcon from '@mui/icons-material/Key';
 
 const useStyles = makeStyles((theme) => ({
   error: {
@@ -64,7 +70,7 @@ const Signup = () => {
           email: values.email,
         },
       });
-
+    
       var config = {
         method: "post",
         url: "https://devacc3.pythonanywhere.com/accounts/interviewee_register/",
@@ -73,13 +79,14 @@ const Signup = () => {
         },
         data: data,
       };
-
+    
       axios(config)
         .then(function (response) {
           console.log(JSON.stringify(response.data));
           navigate("/login");
         })
-        .catch(function (error) {
+        .catch(function (error)
+        {
           console.log(error);
         });
     },
@@ -89,7 +96,7 @@ const Signup = () => {
     <div className="outerDiv2ForSignup">
       <div className="innerDiv2">
         <div className="loginHeader">SIGNUP</div>
-        <div className="userPass"> EMAIL</div>
+        <div className="userPass" style={{marginTop:"10"}}>Email</div>
         <TextField
           variant="outlined"
           id="email"
@@ -104,9 +111,16 @@ const Signup = () => {
           onChange={formik.handleChange}
           value={formik.values.email}
           className={classes.field}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AttachEmailIcon sx={{color:"#333333"}}/>
+              </InputAdornment>
+            ),
+          }}
         />
 
-        <div className="userPass"> USERNAME</div>
+        <div className="userPass"> Username</div>
         <TextField
           variant="outlined"
           id="username"
@@ -120,6 +134,13 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.username}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <PersonIcon sx={{color:"#333333"}}/>
+              </InputAdornment>
+            ),
+          }}
         />
 
         <div className="userPass"> SAP ID</div>
@@ -136,6 +157,13 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.sapid}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <NumbersIcon sx={{color:"#333333"}}/>
+              </InputAdornment>
+            ),
+          }}
         />
 
         <div className="userPass"> Graduation Year</div>
@@ -152,6 +180,13 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.grad_year}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SchoolIcon sx={{color:"#333333"}}/>
+              </InputAdornment>
+            ),
+          }}
         />
 
         <div className="userPass">Password</div>
@@ -168,6 +203,13 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.setPassword}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <KeyIcon sx={{color:"#333333"}}/>
+              </InputAdornment>
+            ),
+          }}
         />
 
         <div className="userPass"> Confirm Password</div>
@@ -184,20 +226,31 @@ const Signup = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.confirmPassword}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <KeyIcon sx={{color:"#333333"}}/>
+              </InputAdornment>
+            ),
+          }}
         />
-
         <div className="dhaaText">
-          <div className="dhaaText1">Already have an account?</div>
-          <div>
+          <div className="dhaaText0">Sign Up with </div>
+          <img src="https://img.icons8.com/color/48/null/google-logo.png" style={{height:27}}/> <img src="https://img.icons8.com/ios-filled/50/null/github.png"  style={{height:27,marginLeft:5}}/>
+          <div className="dhaaText1">Already have an account?
             <Link to="/login" className="dhaaText2">
-              Login
+               <span style={{marginLeft:5}}>Login</span>
             </Link>
           </div>
         </div>
+        
         <Button
           variant="contained"
           className="signBttn"
           onClick={formik.handleSubmit}
+          sx={{backgroundColor:"#5154CE",
+          }}
+         
         >
           SIGN UP
         </Button>
