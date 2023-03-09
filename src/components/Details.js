@@ -19,7 +19,8 @@ import { Box } from "@mui/system";
 import axios from "axios";
 const useStyles = makeStyles((theme) => ({
   grad: {
-    backgroundColor: "#F2F3F7",
+    // backgroundColor: "#F2F3F7",
+    
     height: "100%",
     padding: "0!important",
     justifyContent: "center",

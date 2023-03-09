@@ -67,7 +67,7 @@ const Signup = () => {
 
       var config = {
         method: "post",
-        url: "https://unicodeinterview.pythonanywhere.com/accounts/interviewee_register/",
+        url: "https://devacc3.pythonanywhere.com/accounts/interviewee_register/",
         headers: {
           "Content-Type": "application/json",
         },

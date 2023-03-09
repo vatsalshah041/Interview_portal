@@ -9,6 +9,9 @@ import * as Yup from "yup";
 import "../styles/login.css";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
+import InputAdornment from '@mui/material/InputAdornment';
+import PersonIcon from '@mui/icons-material/Person';
+import KeyIcon from '@mui/icons-material/Key';
 const useStyles = makeStyles((theme) => ({
   error: {
     display: "flex",
@@ -33,37 +36,78 @@ const Login = () => {
     }),
     onSubmit: (values) => {
 
-      var FormData = require("form-data");
-      var data = new FormData();
-      data.append("sapid", values.username);
-      data.append("password", values.password);
+      var axios = require('axios');
+      var data = JSON.stringify({
+        "sapid": values.username,
+        "password": values.password
+      });
 
       var config = {
-        method: "post",
-        url: "https://unicodeinterview.pythonanywhere.com/accounts/login/",
-        data: data,
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'http://devacc3.pythonanywhere.com/accounts/login/',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data: data
       };
 
       axios(config)
-        .then(function (response) {
+        .then(function(response){
           console.log(response.data);
           if (response.data.token) {
-            if (response.data.is_interviewer) {
-              navigate('/admin')
-            }
-            else {
-              localStorage.setItem("sapid", formik.values.username);
-              navigate('/dashboard')
-            }
-          } else {
-            navigate("/signup");
-            alert("Invalid cred");
-          }
-          localStorage.setItem("token", response.data.token);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+                  if (response.data.is_interviewer) {
+                    console.log("INTERVIEWER")
+                    navigate('/admin')
+                  }
+                  else {
+                    localStorage.setItem("sapid", formik.values.username);
+                    console.log("Interviwee")
+                    navigate('/dashboard')
+                  }
+                } else {
+                  navigate("/signup");
+                  alert("Invalid cred");
+                }
+                localStorage.setItem("token", response.data.token);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+
+
+      // var FormData = require("form-data");
+      // var data = new FormData();
+      // data.append("sapid", values.username);
+      // data.append("password", values.password);
+      // var config = {
+      //   method: "post",
+      //   url: "devacc3.pythonanywhere.com/accounts/login/",
+      //   data: data,
+      // };
+
+      // axios(config)
+      //   .then(function (response) {
+      //     console.log(response.data);
+      //     if (response.data.token) {
+      //       if (response.data.is_interviewer) {
+      //         console.log("INTERVIEWER")
+      //         navigate('/admin')
+      //       }
+      //       else {
+      //         localStorage.setItem("sapid", formik.values.username);
+      //         console.log("Interviwee")
+      //         navigate('/dashboard')
+      //       }
+      //     } else {
+      //       navigate("/signup");
+      //       alert("Invalid cred");
+      //     }
+      //     localStorage.setItem("token", response.data.token);
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
     },
   });
 
@@ -71,7 +115,7 @@ const Login = () => {
     <div className="outerDiv2ForLogin">
       <div className="innerDiv2">
         <div className="loginHeader">LOGIN</div>
-        <div className="userPass"> SAP ID</div>
+        <div className="userPass"> Username</div>
         <TextField
           id="username"
           name="username"
@@ -86,6 +130,9 @@ const Login = () => {
           value={formik.values.username}
           variant="outlined"
           className="smallfield"
+          InputProps={{
+            startAdornment: <InputAdornment position="start"><PersonIcon></PersonIcon></InputAdornment>,
+          }}
         />
 
         <div className="userPass">Password</div>
@@ -103,6 +150,9 @@ const Login = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.password}
+          InputProps={{
+            startAdornment: <InputAdornment position="start"><KeyIcon></KeyIcon></InputAdornment>,
+          }}
         />
 
         <div className="dhaaText">

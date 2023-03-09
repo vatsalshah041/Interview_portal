@@ -15,7 +15,7 @@ function ResponsiveDrawer(props) {
   const { windows } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const { children } = props;
-  const [openDrawer, setOpenDrawer] = useState(true);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -57,7 +57,7 @@ function ResponsiveDrawer(props) {
         >
           {drawer}
         </Drawer>
-        {openDrawer ? (
+        {/* {openDrawer ? (
           <Drawer
             variant="permanent"
             className="borderSidebar"
@@ -83,7 +83,7 @@ function ResponsiveDrawer(props) {
             </Grid>
             {narrowDrawer}
           </Drawer>
-        ) : (
+        ) : ( */}
           <Drawer
             variant="permanent"
             className="borderSidebar"
@@ -96,7 +96,7 @@ function ResponsiveDrawer(props) {
             }}
             open
           >
-            <Grid
+            {/* <Grid
               onClick={() => setOpenDrawer(!openDrawer)}
               sx={{
                 display: "flex",
@@ -107,10 +107,10 @@ function ResponsiveDrawer(props) {
               }}
             >
               <ChevronLeftIcon sx={{ color: "#09c1d7", padding: "5%" }} />
-            </Grid>
+            </Grid> */}
             {drawer}
           </Drawer>
-        )}
+        
       </Box>
       <Box
         component="main"
