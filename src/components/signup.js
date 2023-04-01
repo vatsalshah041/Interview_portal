@@ -60,6 +60,7 @@ const Signup = () => {
     onSubmit: (values) => {
       console.log(values);
       var axios = require("axios");
+      navigate("/login");
       var data = JSON.stringify({
         user: {
           name: values.username,
@@ -69,6 +70,7 @@ const Signup = () => {
           grad_year: values.grad_year,
           email: values.email,
         },
+       
       });
     
       var config = {
@@ -114,7 +116,7 @@ const Signup = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <AttachEmailIcon sx={{color:"#333333"}}/>
+                <AttachEmailIcon/>
               </InputAdornment>
             ),
           }}
@@ -137,7 +139,9 @@ const Signup = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <PersonIcon sx={{color:"#333333"}}/>
+                <PersonIcon
+                //  sx={{color:"#333333"}}
+                 />
               </InputAdornment>
             ),
           }}
@@ -160,7 +164,8 @@ const Signup = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <NumbersIcon sx={{color:"#333333"}}/>
+                <NumbersIcon 
+                />
               </InputAdornment>
             ),
           }}
@@ -183,7 +188,7 @@ const Signup = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SchoolIcon sx={{color:"#333333"}}/>
+                <SchoolIcon />
               </InputAdornment>
             ),
           }}
@@ -206,7 +211,7 @@ const Signup = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <KeyIcon sx={{color:"#333333"}}/>
+                <KeyIcon />
               </InputAdornment>
             ),
           }}
@@ -229,7 +234,7 @@ const Signup = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <KeyIcon sx={{color:"#333333"}}/>
+                <KeyIcon />
               </InputAdornment>
             ),
           }}

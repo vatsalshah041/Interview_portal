@@ -1,5 +1,6 @@
-import { Card, Divider, Grid, Typography } from "@mui/material";
+import { Card, Divider, Grid, Typography,Button} from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   flexItem: {
@@ -15,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
   [theme.breakpoints.up("md")]: {
     card1: {
-      height: "24vh",
+      height: "15vh",
+      width:"18vw"
     },
   },
   divider: {
@@ -31,14 +33,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const InterviewScheduleCard = () => {
+const ApplyCard = () => {
   const classes = useStyles();
+  const navigate=useNavigate();
   return (
     <Card className={classes.card1}>
       <Grid container item className={classes.flexItem} rowSpacing="20">
         <Grid item>
           <Typography sx={{textAlign:"left",ml:0,fontSize:"1.5em"}}>
-            <strong>Interview</strong>
+            <strong>Apply for Interview</strong>
           </Typography>
         </Grid>
         <Grid item xs={12}>
@@ -46,7 +49,12 @@ const InterviewScheduleCard = () => {
         </Grid>
         <Grid item xs={12}>
           <Typography className={classes.text}>
-            Not yet scheduled will notify you when it is scheduled
+            <Button onClick={()=>{navigate('/applicationform')}} sx={{borderRadius:"6px",border:" solid 3px white",boxShadow:"0 6px 20px 0 rgba(0, 0, 0, 0.19)",backgroundColor:"#5154CE",color:"white",
+                "&:hover": {
+                    color: 'white',
+                    backgroundColor: '#CBC3E3'
+                  },
+                  width:"110px"}}>Apply</Button>
           </Typography>
         </Grid>
       </Grid>
@@ -54,4 +62,4 @@ const InterviewScheduleCard = () => {
   );
 };
 
-export default InterviewScheduleCard;
+export default ApplyCard;

@@ -20,10 +20,7 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
-  const narrowDrawer = <NarrowDrawer />;
-
-  const drawer = <BroadDrawer />;
+  const drawer = <BroadDrawer/>;
 
   const container =
     windows !== undefined ? () => windows().document.body : undefined;
@@ -57,33 +54,6 @@ function ResponsiveDrawer(props) {
         >
           {drawer}
         </Drawer>
-        {/* {openDrawer ? (
-          <Drawer
-            variant="permanent"
-            className="borderSidebar"
-            sx={{
-              display: { xs: 2, sm: 2 },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: narrowDrawerWidth,
-              },
-            }}
-            open
-          >
-            <Grid
-              onClick={() => setOpenDrawer(!openDrawer)}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                padding: "20%",
-                cursor: "pointer",
-              }}
-            >
-              <ChevronRightIcon sx={{ color: "#09c1d7" }} />
-            </Grid>
-            {narrowDrawer}
-          </Drawer>
-        ) : ( */}
           <Drawer
             variant="permanent"
             className="borderSidebar"
@@ -91,23 +61,11 @@ function ResponsiveDrawer(props) {
               display: { xs: 1, sm: "block" },
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
-                width: { xs: "240px", sm: { drawerWidth } },
+                width: { xs: "260px", sm: { drawerWidth } },
               },
             }}
             open
           >
-            {/* <Grid
-              onClick={() => setOpenDrawer(!openDrawer)}
-              sx={{
-                display: "flex",
-                justifyContent: "flex-start",
-                alignItems: "center",
-                padding: "0%",
-                cursor: "pointer",
-              }}
-            >
-              <ChevronLeftIcon sx={{ color: "#09c1d7", padding: "5%" }} />
-            </Grid> */}
             {drawer}
           </Drawer>
         

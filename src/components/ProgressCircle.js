@@ -41,7 +41,7 @@ export default function CircularStatic() {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    setProgress(20);
+    setProgress(80);
   }, []);
 
   return <ProgressCircle value={progress} />;

@@ -46,7 +46,8 @@ const ProfileProgress = (props) => {
         </Grid>
         <Grid item xs={10}>
           <Typography>
-            Your profile is still 80% incomplete. <br/> Complete your profile now
+            Your profile is still 20% incomplete. <br/> 
+            <Typography sx={{color:"gray"}}>Complete your profile now!</Typography>
           </Typography>
         </Grid>
       </Grid>
