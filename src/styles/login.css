@@ -14,7 +14,7 @@
   width: 55%;
   height: 40%;
 }
-.dhaaText {
+/* .dhaaText {
   display: flex;
   flex-flow: row wrap;
   font-family: "poppins" !important;
@@ -29,6 +29,33 @@
   font-size: 14px;
   font-weight: 700;
   color: #8985F2;
+  text-decoration: none !important;
+} */
+.dhaaText {
+  /* display: flex; */
+  margin-top: 5px;
+  flex-flow: row wrap;
+  font-family: "poppins" !important;
+  justify-content: center;
+}
+.dhaaText0 {
+  margin-top: 0px;
+  padding-left: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 1%;
+}
+.dhaaText1 {
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 1%;
+}
+.dhaaText2 {
+  
+  font-size: 14px;
+  font-weight: 700;
+  color: #5154CE;
   text-decoration: none !important;
 }
 
