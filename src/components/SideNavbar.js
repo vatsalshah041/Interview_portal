@@ -7,6 +7,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import BroadDrawer from "./BroadDrawer";
 import { Grid } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const drawerWidth = 240;
 const narrowDrawerWidth = 60;
@@ -24,12 +25,16 @@ function ResponsiveDrawer(props) {
   const narrowDrawer = <NarrowDrawer />;
 
   const drawer = <BroadDrawer />;
+  const matches = useMediaQuery('(max-width:600px)');
 
   const container =
     windows !== undefined ? () => windows().document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
+      
+      {matches?(<><div>bye</div></>):(<><div>{console.log("hii")}</div></>)}
+
       <Box
         component="nav"
         sx={

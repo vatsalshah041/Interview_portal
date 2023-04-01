@@ -1,10 +1,19 @@
-import { Grid, TextField, Button } from "@mui/material";
+import { Grid, TextField, Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import SideNavbar from "../components/SideNavbar";
 import Chip from "@mui/material/Chip";
 import "../styles/profile.css";
+import { styled } from '@material-ui/core/styles';
 
 export default function Profile() {
+  
+  const SearchBox = styled(TextField)(() => ({
+    '& fieldset': {
+      borderRadius: '25px',
+    },
+  }));
+
+
   var myHeaders = new Headers();
   myHeaders.append("Authorization", `Token ${localStorage.getItem("token")}`);
   myHeaders.append("Content-Type", "application/json");
@@ -93,16 +102,19 @@ export default function Profile() {
   return (
     <>
       <SideNavbar>
-        <h2> Profile Page </h2>
+        <div className='class1'>
+        <Typography variant="h3" >Profile Page</Typography>
 
         <Grid container spacing={2} sx={{ padding: "2% 30%" }}>
           <Grid item xs={12}>
+            
             <TextField
               disabled={profile}
               value={user.name}
               onChange={(e) => setUser({ ...user, name: e.target.value })}
               label="Name"
               fullWidth
+              style={{borderRadius:20}}
             />
           </Grid>
         </Grid>
@@ -196,6 +208,7 @@ export default function Profile() {
             </Button>
           </Grid>
         </Grid>
+        </div>
       </SideNavbar>
     </>
   );
