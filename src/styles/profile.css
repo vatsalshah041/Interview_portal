@@ -11,3 +11,8 @@
 .MuiButton-containedSecondary {
   background-color: #09c1d7 !important;
 }
+.class1{
+  background-image: url('../images/image3.png');
+  background-size:cover;
+
+}
