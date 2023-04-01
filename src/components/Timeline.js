@@ -1,5 +1,8 @@
 import React from "react";
-import { Timeline, Events, TextEvent } from "@merc/react-timeline";
+import { Timeline, Events, TextEvent} from "@merc/react-timeline";
+import  { useState } from "react";
+import HorizontalTimeline from "react-horizontal-timeline";
+
 import { Card, Grid, Typography, Divider } from "@mui/material";
 import { themes, createTheme } from "@merc/react-timeline";
 
@@ -16,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   card2: {
     padding: "3%",
-    // height: "65vh",
+    height: "65vh",
     boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)!important",
     borderRadius: "10px!important",
   },
@@ -24,21 +27,32 @@ const useStyles = makeStyles((theme) => ({
 
 const customTheme = createTheme(themes.default, {
   card: {
-    backgroundColor: "#efefef",
+    
   },
   date: {
-    backgroundColor: "#09c1d7",
+
+    backgroundColor: "#DADBFF",
+    // borderRadius:"50%",
+
   },
   marker: {
-    borderColor: "#09c1d7",
+    // borderColor: "white",
   },
   timelineTrack: {
-    backgroundColor: "#09c1d7",
+    backgroundColor: "#5154CE",
   },
 });
 
 const TimeLine = () => {
   const classes = useStyles();
+  const [value, setValue] = useState(0);
+  const [previous, setPrevious] = useState(0);
+  const VALUES = ["2021-01-01", "2021-01-15", "2021-03-22"];
+  const description = [
+    "The event of 1 Jan 2021 : Happy New Year",
+    "The event of 15 Jan 2021 : Festival",
+   
+  ];
   return (
     <Card className={classes.card2} sx={{ height: "fit-content" }}>
       <Grid container sx={{ height: "fit-content" }}>
@@ -58,8 +72,23 @@ const TimeLine = () => {
               <TextEvent date="14 June" text="Results" />
             </Events>
           </Timeline>
-        </Grid>
-      </Grid>
+          {/* <div style={{ width: "100%",
+                    height: "200px", 
+                    marginTop: "70px" }}>
+          <HorizontalTimeline
+          styles={{ outline: "#DFA867", foreground: "#19295C" }}
+          index={value}
+          indexClick={(index) => {
+            setValue(index);
+            setPrevious(value);
+          }}
+          values={VALUES}
+        />
+        </div>
+        <div className="text-center">{description[value]}</div> */}
+
+        </Grid> 
+       </Grid>
     </Card>
   );
 };

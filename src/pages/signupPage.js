@@ -5,6 +5,7 @@ import "../styles/login_signup.css";
 import { makeStyles } from "@mui/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Grid } from "@mui/material";
+import Backdrop from '../images/image1.png'
 const useStyles = makeStyles((theme) => ({
   grad: {
     backgroundImage: theme.gradient,
@@ -21,7 +22,7 @@ const SignupPage = () => {
   return (
     <div>
       <Grid container>
-        {!matches && <Grid item className={classes.grad} ></Grid>}
+        {!matches && <img className={classes.grad} src={Backdrop}></img>}
         <Grid item className="signUpDiv">
           <Signup />
         </Grid>

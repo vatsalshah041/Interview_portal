@@ -263,6 +263,7 @@ const Details = () => {
             <Grid item xs={12} className={classes.gridRow}>
               <Grid item xs={12}>
                 <TextField
+                className="TextField-with-border-radius"
                   id="resume"
                   name="resume"
                   helperText={

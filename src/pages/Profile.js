@@ -109,6 +109,7 @@ export default function Profile() {
           <Grid item xs={12}>
             
             <TextField
+              className="TextField-with-border-radius"
               disabled={profile}
               value={user.name}
               onChange={(e) => setUser({ ...user, name: e.target.value })}
