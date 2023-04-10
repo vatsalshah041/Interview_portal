@@ -1,6 +1,6 @@
 //HIII this is a change
 
-
+import axios from "axios";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
@@ -18,63 +18,69 @@ export default function CollapsibleTable() {
     setValue(newValue);
   };
 
-  var myHeaders = new Headers();
 
-  myHeaders.append("Authorization", `Token ${localStorage.getItem("token")}`);
+  // const [user, setUser] = useState([
+  //   {
+  //     id: "0",
+  //     interviewees: [
+  //       {
+  //         id: "0",
+  //         application: {
+  //           stack: [{ name: "", repo_link: "" }],
+  //           resume_link: "",
+  //         },
+  //         user: {
+  //           email: "",
+  //           sapid: "",
+  //           grad_year: "",
+  //           name: "",
+  //         },
+  //       },
+  //     ],
+  //     interviewers: [
+  //       {
+  //         id: "0",
+  //         role: "Fullstack",
+  //         stack: 1,
+  //         user: {
+  //           email: "",
+  //           sapid: "",
+  //           grad_year: 2020,
+  //           name: "",
+  //         },
+  //       },
+  //     ],
+  //     name: "Panel",
+  //   },
+  // ]);
+  const [user,setUser]=useState([])
+const token='Token '+localStorage.getItem("token")
 
-  const [user, setUser] = useState([
-    {
-      id: "0",
-      interviewees: [
-        {
-          id: "0",
-          application: {
-            stack: [{ name: "", repo_link: "" }],
-            resume_link: "",
-          },
-          user: {
-            email: "",
-            sapid: "",
-            grad_year: "",
-            name: "",
-          },
-        },
-      ],
-      interviewers: [
-        {
-          id: "0",
-          role: "Fullstack",
-          stack: 1,
-          user: {
-            email: "",
-            sapid: "",
-            grad_year: 2020,
-            name: "",
-          },
-        },
-      ],
-      name: "Panel",
-    },
-  ]);
-
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
-  };
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: '//devacc3.pythonanywhere.com/accounts/panel_details/',
+  headers: { 
+    'Authorization': 'Token 900226a193560407f57a6b5af69eb3d691314a2b', 
+    'Cookie': 'csrftoken=C4blmkJPhh0AuFtWyLpjeYA0BvfQgeASQY6l54W7HxWWgjtTKsCumGnhiSxj998Y; sessionid=x3ims0rx6tw40sv6hp7sd6ypz9g6cqq5'
+  }
+};
 
   useEffect(() => {
-    fetch(
-      "https://unicodeinterview.pythonanywhere.com/accounts/panel_details/",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        setUser(result);
-      })
-      .catch((error) => console.log("error", error));
+    console.log(token);
+    async function makeRequest() {
+      try {
+        const response = await axios.request(config);
+        console.log((response.data));
+        setUser(response.data)
+      }
+      catch (error) {
+        console.log(error);
+      }
+    }
+    
+    makeRequest();
 
-      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let stackName = [];
@@ -84,7 +90,6 @@ export default function CollapsibleTable() {
   });
 
   return (
-    <Grid container>
       <Grid item sm={12}>
         <div style={{ clear: "both" }}>
           <Tabs value={value} onChange={handleChange} centered>
@@ -117,6 +122,6 @@ export default function CollapsibleTable() {
             ))}
         </div>
       </Grid>
-    </Grid>
+    
   );
 }
