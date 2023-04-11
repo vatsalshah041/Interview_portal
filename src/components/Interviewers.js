@@ -40,12 +40,13 @@ export default function Interviewers(props) {
         <Grid style={{ margin: "10px" }}>
           <h3 style={{ textAlign: "left" }}>Mentors: </h3>
         </Grid>
+        <Grid style={{ margin: "10px" }}>
         <Stack direction="row" spacing={2}>
           {props.data.interviewers
             .filter((data) => (data.role === "TE" || data.role==="BE"))
             .map((interviewer, i) => (
               <>
-              
+              <div>hii</div>
               </>
               // <div key={i} style={{ margin: "10px" }}>
               //   <Avatar
@@ -56,6 +57,7 @@ export default function Interviewers(props) {
               // </div>
             ))}
         </Stack>
+        </Grid>
       </Grid>
       
     </Grid>

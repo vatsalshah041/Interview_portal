@@ -116,8 +116,16 @@ let config = {
             .filter((item) => item.name === stackName[value])
             .map((item, i) => (
               <div key={i}>
+                <Grid container>
+                  <Grid item md={12} sx={{padding:"10px"}}>
                 <Interviewers data={item} />
+                </Grid>
+                <hr></hr>
+                <br></br>
+                <Grid item md={12} sx={{border:"1px black"}}>
                 <PanelDetails user={user.filter((item)=> item.name === stackName[value])} />
+                </Grid>
+                </Grid>
               </div>
             ))}
         </div>
