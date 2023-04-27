@@ -1,20 +1,38 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {  useState } from "react";
 import Table from "@mui/material/Table";
+import { styled } from '@mui/material/styles';
 import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Row from "./Row";
-import { Route, Routes } from "react-router";
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet, Navigate, Link } from "react-router-dom";
 import Chip from "@mui/material/Chip";
 import { Button, Grid } from "@mui/material";
-import ScorePage from "../pages/ScorePage";
-import { useNavigate } from "react-router-dom";
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import Modal from 'react-bootstrap/Modal';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 
 export default function PanelDetails(props) {
   const [pop, setPop] = useState()
@@ -24,7 +42,7 @@ export default function PanelDetails(props) {
     return (
       <>
         {pop ? <>
-          {console.log(pop)}
+          {localStorage.setItem("sapmod",pop.sapid)}
           <Modal
             {...prop}
             size="lg"
@@ -61,19 +79,23 @@ export default function PanelDetails(props) {
                   <b>Resume Link: </b>{pop.resume}
                 </Grid>
                 <Grid item md={12} sx={{ textAlign: "center" }}>
-                  <Button variant="outlined">Score</Button>
+                  <Button variant="outlined" onClick={scorecard(pop)}><Link to='/admin/scorecard' values={pop}>Score</Link></Button>
                 </Grid>
               </Grid>
             </Modal.Body>
-            <Modal.Footer>
+            {/* <Modal.Footer>
               <Button onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
+            </Modal.Footer> */}
           </Modal>
         </> : null}
 
 
       </>
     );
+  }
+  const scorecard=(val)=>{
+    //navigate('/')
+
   }
   const mod = (i) => {
     setPop(rows[i]);
@@ -143,9 +165,7 @@ export default function PanelDetails(props) {
       email, year, github, resume, sapid
     };
   }
-  console.log((props.user[0].interviewees))
-  const rows = [
-  ];
+  const rows = [];
   let l = props.user[0].interviewees.length;
   for (let i = 0; i < l; i++) {
     let st = []; let res = []
@@ -167,11 +187,11 @@ export default function PanelDetails(props) {
   return (
     <>
       <Grid item sm={12}>
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} sx={{borderRadius:'5px'}}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                <TableCell align="center">Name </TableCell>
+                <TableCell align="center" sx={{backgroundColor:"violet"}}>Name </TableCell>
                 <CustomTableCell align="center">Skills</CustomTableCell>
                 <TableCell align="center">Scheduled interview</TableCell>
                 <TableCell align="center"> Submission Detail </TableCell>

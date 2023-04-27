@@ -10,6 +10,7 @@ import ApplicationForm from "./pages/ApplicationForm";
 import AdminPanel from "./pages/AdminPanel";
 import FaqPage from "./pages/FaqPage";
 import ScorePage from "./pages/ScorePage";
+import Scorecard from "./components/Scorecard";
 function App() {
   const PrivateRoute = () => {
     const token = localStorage.getItem("token");
@@ -44,6 +45,7 @@ function App() {
           {/* <Route path="/admin/scorecard/:id" element={<PrivateRoute />}> */}
             <Route path="/admin/scorecard/:id" element={<ScorePage />} />
           {/* </Route> */}
+          <Route path="/admin/scorecard" element={<Scorecard />} />
         </Routes>
       </div>
     </Router>
