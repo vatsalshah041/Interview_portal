@@ -41,7 +41,7 @@ function ResponsiveDrawer(props) {
         }
         aria-label="mailbox folders"
       >
-        <Drawer
+        {/* <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -58,7 +58,7 @@ function ResponsiveDrawer(props) {
           }}
         >
           {drawer}
-        </Drawer>
+        </Drawer> */}
           <Drawer
             variant="permanent"
             className="borderSidebar"
