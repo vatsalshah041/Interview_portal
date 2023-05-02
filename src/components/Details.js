@@ -19,8 +19,7 @@ import { Box } from "@mui/system";
 import axios from "axios";
 const useStyles = makeStyles((theme) => ({
   grad: {
-    // backgroundColor: "#F2F3F7",
-    
+    backgroundColor: "#F2F3F7",
     height: "100%",
     padding: "0!important",
     justifyContent: "center",
@@ -118,10 +117,7 @@ const Details = () => {
       frontend: "",
       node: "",
       django: "",
-      flutter: "",
-      fullStackDjango: "",
-      reactNative: "",
-      fullStackNode: "",
+      app:"",
       stacks: [],
     },
     validationSchema: Yup.object().shape({
@@ -145,8 +141,8 @@ const Details = () => {
         if (stacks.includes("fullStackDjango"))
           return Yup.string().required("Required");
       }),
-      reactNative: Yup.string().when("stacks", (stacks) => {
-        if (stacks.includes("reactNative"))
+      app: Yup.string().when("stacks", (stacks) => {
+        if (stacks.includes("app"))
           return Yup.string().required("Required");
       }),
       fullStackNode: Yup.string().when("stacks", (stacks) => {
@@ -178,8 +174,8 @@ const Details = () => {
           repo_link: values.fullStackDjango,
         },
         {
-          name: "React Native",
-          repo_link: values.reactNative,
+          name: "App",
+          repo_link: values.app,
         },
         {
           name: "Fullstack Node",
@@ -263,7 +259,6 @@ const Details = () => {
             <Grid item xs={12} className={classes.gridRow}>
               <Grid item xs={12}>
                 <TextField
-                className="TextField-with-border-radius"
                   id="resume"
                   name="resume"
                   helperText={
@@ -279,16 +274,7 @@ const Details = () => {
                 />
               </Grid>
             </Grid>
-            <Grid item xs={12} className={classes.gridRow}>
-              <Grid item xs={1}>
-                <GitHubIcon className={classes.icon} />
-              </Grid>
-              <Grid item xs={11}>
-                <Typography className={classes.formlabel}>
-                  Github repository link
-                </Typography>
-              </Grid>
-            </Grid>
+           
             <Grid item xs={12} className={classes.gridRow}>
               <Checkbox
                 checked={formik.values.stacks.includes("frontend")}
@@ -316,35 +302,6 @@ const Details = () => {
                 variant="outlined"
                 id="frontend"
                 name="frontend"
-              />
-            </Grid>
-
-            <Grid item xs={12} className={classes.gridRow}>
-              <Checkbox
-                name="stacks"
-                value="node"
-                onBlur={formik.handleBlur}
-                checked={formik.values.stacks.includes("node")}
-                onChange={(e) => {
-                  getValue(e.target.value);
-                  formik.handleChange(e);
-                }}
-              />
-              <TextField
-                className={classes.field}
-                disabled={!formik.values.stacks.includes("node")}
-                label="node"
-                helperText={
-                  formik.touched.node && formik.errors.node
-                    ? formik.errors.node
-                    : null
-                }
-                variant="outlined"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.node}
-                id="node"
-                name="node"
               />
             </Grid>
 
@@ -380,6 +337,37 @@ const Details = () => {
             <Grid item xs={12} className={classes.gridRow}>
               <Checkbox
                 name="stacks"
+                value="node"
+                onBlur={formik.handleBlur}
+                checked={formik.values.stacks.includes("node")}
+                onChange={(e) => {
+                  getValue(e.target.value);
+                  formik.handleChange(e);
+                }}
+              />
+              <TextField
+                className={classes.field}
+                disabled={!formik.values.stacks.includes("node")}
+                label="node"
+                helperText={
+                  formik.touched.node && formik.errors.node
+                    ? formik.errors.node
+                    : null
+                }
+                variant="outlined"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.node}
+                id="node"
+                name="node"
+              />
+            </Grid>
+
+          
+
+            {/* <Grid item xs={12} className={classes.gridRow}>
+              <Checkbox
+                name="stacks"
                 checked={formik.values.stacks.includes("flutter")}
                 value="flutter"
                 onBlur={formik.handleBlur}
@@ -404,13 +392,13 @@ const Details = () => {
                 id="flutter"
                 name="flutter"
               />
-            </Grid>
+            </Grid> */}
 
             <Grid item xs={12} className={classes.gridRow}>
               <Checkbox
-                checked={formik.values.stacks.includes("reactNative")}
+                checked={formik.values.stacks.includes("app")}
                 name="stacks"
-                value="reactNative"
+                value="app"
                 onChange={(e) => {
                   getValue(e.target.value);
                   formik.handleChange(e);
@@ -420,79 +408,19 @@ const Details = () => {
 
               <TextField
                 className={classes.field}
-                disabled={!formik.values.stacks.includes("reactNative")}
+                disabled={!formik.values.stacks.includes("app")}
                 helperText={
-                  formik.touched.reactNative && formik.errors.reactNative
-                    ? formik.errors.reactNative
+                  formik.touched.app && formik.errors.app
+                    ? formik.errors.app
                     : null
                 }
-                label="React Native"
+                label="App"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.reactNative}
+                value={formik.values.app}
                 variant="outlined"
-                id="reactNative"
-                name="reactNative"
-              />
-            </Grid>
-
-            <Grid item xs={12} className={classes.gridRow}>
-              <Checkbox
-                checked={formik.values.stacks.includes("fullStackNode")}
-                name="stacks"
-                value="fullStackNode"
-                onChange={(e) => {
-                  getValue(e.target.value);
-                  formik.handleChange(e);
-                }}
-                onBlur={formik.handleBlur}
-              />
-
-              <TextField
-                className={classes.field}
-                disabled={!formik.values.stacks.includes("fullStackNode")}
-                helperText={
-                  formik.touched.fullStackNode && formik.errors.fullStackNode
-                    ? formik.errors.fullStackNode
-                    : null
-                }
-                label="Fullstack Node"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.fullStackNode}
-                variant="outlined"
-                id="fullStackNode"
-                name="fullStackNode"
-              />
-            </Grid>
-
-            <Grid item xs={12} className={classes.gridRow}>
-              <Checkbox
-                checked={formik.values.stacks.includes("fullStackDjango")}
-                name="stacks"
-                value="fullStackDjango"
-                onChange={(e) => {
-                  getValue(e.target.value);
-                  formik.handleChange(e);
-                }}
-                onBlur={formik.handleBlur}
-              />
-              <TextField
-                className={classes.field}
-                disabled={!formik.values.stacks.includes("fullStackDjango")}
-                helperText={
-                  formik.touched.fullStackDjango &&
-                  formik.errors.fullStackDjango
-                    ? formik.errors.fullStackDjango
-                    : null
-                }
-                label="Fullstack Django"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.fullStackDjango}
-                variant="outlined"
-                id="fullStackDjango"
-                name="fullStackDjango"
+                id="app"
+                name="app"
               />
             </Grid>
 
