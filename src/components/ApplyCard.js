@@ -54,7 +54,7 @@ const ApplyCard = () => {
                     color: 'white',
                     backgroundColor: '#CBC3E3'
                   },
-                  width:"110px"}}>Apply</Button>
+                  width:"110px",justifyContent:"center"}}>Apply</Button>
           </Typography>
         </Grid>
       </Grid>
