@@ -186,15 +186,17 @@ export default function PanelDetails(props) {
 
   return (
     <>
-      <Grid item sm={12}>
-        <TableContainer component={Paper} sx={{borderRadius:'5px'}}>
+      <Grid item sm={12} sx={{padding:'5x'}}>
+        <TableContainer component={Paper} sx={{paddingRight:'25px',paddingLeft:'25px'}}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                <TableCell align="center" sx={{backgroundColor:"violet"}}>Name </TableCell>
-                <CustomTableCell align="center">Skills</CustomTableCell>
-                <TableCell align="center">Scheduled interview</TableCell>
-                <TableCell align="center"> Submission Detail </TableCell>
+                <TableCell align="center" sx={{backgroundColor:"#8c7deecc",borderTopLeftRadius:'23px'}}>Name </TableCell>
+                {/* <CustomTableCell >Skill</CustomTableCell>
+                 */}
+                 <TableCell align="center" sx={{backgroundColor:"#8c7deecc",paddingRight:'2px'}}>Skill</TableCell>
+                <TableCell align="center" sx={{backgroundColor:"#8c7deecc",paddingRight:'2px'}}>Scheduled interview</TableCell>
+                <TableCell align="center"sx={{backgroundColor:"#8c7deecc",borderTopRightRadius:'23px'}}> Submission Detail </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -206,7 +208,8 @@ export default function PanelDetails(props) {
                   <TableCell component="th" scope="row" align="center">
                     {row.name}
                   </TableCell>
-                  <CustomTableCell values={row.stacks}></CustomTableCell>
+                  {/* <CustomTableCell values={row.stacks}></CustomTableCell> */}
+                  <TableCell >{row.stacks}</TableCell>
                   <TableCell align="center">{row.schedule}</TableCell>
                   <TableCell align="center"><Button onClick={() => mod(i)}><AssignmentIcon /></Button></TableCell>
                 </TableRow>
