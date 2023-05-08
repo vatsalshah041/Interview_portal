@@ -66,8 +66,8 @@ const TimeLine = () => {
           <Timeline theme={customTheme}>
             <Events>
               <TextEvent date="02 May" text="Tasks will be assigned" />
-              <TextEvent date="18 May" text="Application Form will be live" />
-              <TextEvent date="28 May" text="Last Day for registration" />
+              {/* <TextEvent date="18 May" text="Application Form will be live" />
+              <TextEvent date="28 May" text="Last Day for registration" /> */}
               <TextEvent date="05 June" text="Interview Round" />
               <TextEvent date="14 June" text="Results" />
             </Events>

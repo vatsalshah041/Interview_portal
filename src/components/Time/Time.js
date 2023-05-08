@@ -61,27 +61,7 @@ const Time = () => {
 													</div>
 												</div>
 											</div>
-											<div className="timeline">
-												<div className="timeline-content">
-													<div
-														className="circle"
-														style={{ backgroundColor: "#8985f2" }}
-													>
-														<h1
-															style={{
-																margin: "0 auto",
-																lineHeight: "180px",
-																fontWeight: "bolder",
-															}}
-														>
-															28 MAY
-														</h1>
-													</div>
-													<div className="content">
-														<h1 className="">Last day for Registration </h1>
-													</div>
-												</div>
-											</div>
+											
 											<div className="timeline">
 												<div className="timeline-content">
 													<div

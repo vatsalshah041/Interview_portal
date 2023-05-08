@@ -134,20 +134,14 @@ function Apply() {
                 </Grid>
               </Grid>
               <div>
-              <Button
-                variant="contained"
-
-                sx={{border:" solid 3px white",boxShadow:"0 6px 20px 0 rgba(0, 0, 0, 0.19)",backgroundColor:"#5154CE",color:"white",
+              <Button  sx={{borderRadius:"6px",border:" solid 3px white",marginTop:"3vh",boxShadow:"0 6px 20px 0 rgba(0, 0, 0, 0.19)",backgroundColor:"#5154CE",color:"white",
                 "&:hover": {
-                  color: 'white',
-                  backgroundColor: '#5154CE'
-                },
-                borderRadius:"10px"
-              }}>
-                Confirm Details
-              </Button>
+                    color: 'white',
+                    backgroundColor: '#CBC3E3'
+                  },
+                 justifyContent:"center"}}>Confirm Details</Button>
               <Link to='/dashboard'>
-              <Typography align="right" sx={{marginRight:"2vw"}} > Skip for now > </Typography>
+              <Typography align="right" sx={{marginRight:"2vw"}} > Skip for now ></Typography>
               </Link>
               </div>
              
