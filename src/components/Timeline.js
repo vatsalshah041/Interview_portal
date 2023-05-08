@@ -57,8 +57,8 @@ const TimeLine = () => {
     <Card className={classes.card2} sx={{ height: "fit-content" }}>
       <Grid container sx={{ height: "fit-content" }}>
         <Grid item className={classes.header} sx={{ height: "fit-content" }}>
-          <Typography gutterBottom variant="h3" component="div" mt={1} mb={1}>
-            <strong>Timeline </strong>
+          <Typography gutterBottom sx={{fontSize:"1.5em"}} component="div" mt={1} mb={1}>
+           <strong>Timeline</strong> 
           </Typography>
         </Grid>
         <Divider className={classes.divider} />
@@ -66,8 +66,8 @@ const TimeLine = () => {
           <Timeline theme={customTheme}>
             <Events>
               <TextEvent date="02 May" text="Tasks will be assigned" />
-              {/* <TextEvent date="18 May" text="Application Form will be live" />
-              <TextEvent date="28 May" text="Last Day for registration" /> */}
+              {/* <TextEvent date="18 May" text="Application Form will be live" /> */}
+              <TextEvent date="28 May" text="Last Day for registration" />
               <TextEvent date="05 June" text="Interview Round" />
               <TextEvent date="14 June" text="Results" />
             </Events>

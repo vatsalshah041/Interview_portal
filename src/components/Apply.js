@@ -8,7 +8,7 @@ import {Link } from 'react-router-dom';
 function Apply() {
   return (
     <div className="cover_div">
-      <Box sx={{paddingBottom:"9vh",paddingTop:"9vh"}}>
+      <Box sx={{paddingBottom:"8vh",paddingTop:"7vh"}}>
       <Box id="box_apply" sx={{justfiyContent:"center",alignItems:"center",marginLeft:"45vh",marginRight:"45vh",borderRadius:"20px",backgroundColor:"white !important",paddingBottom:"1vh"}}>
               <Typography sx={{fontWeight:"bold", paddingTop:"4vh",color:"#5154CE",fontSize:"2rem"}}>
                 Application Form
@@ -134,11 +134,12 @@ function Apply() {
                 </Grid>
               </Grid>
               <div>
-              <Button  sx={{borderRadius:"6px",border:" solid 3px white",marginTop:"3vh",boxShadow:"0 6px 20px 0 rgba(0, 0, 0, 0.19)",backgroundColor:"#5154CE",color:"white",
+              <Button  sx={{borderRadius:"6px",border:" solid 3px white",marginTop:"3vh",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",backgroundColor:"#5154CE",color:"white",
                 "&:hover": {
                     color: 'white',
                     backgroundColor: '#CBC3E3'
                   },
+
                  justifyContent:"center"}}>Confirm Details</Button>
               <Link to='/dashboard'>
               <Typography align="right" sx={{marginRight:"2vw"}} > Skip for now ></Typography>
