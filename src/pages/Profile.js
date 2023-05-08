@@ -58,13 +58,14 @@ export default function Profile() {
     var raw2 = JSON.stringify({
       user: {
         name: user.name,
-        sapid: "5",
+        sapid: user.sapid,
         grad_year: user.grad_year,
         email: user.email,
         password: user.pass,
         confirm_password: user.pass,
       },
     });
+    //post after save
     var requestOptions2 = {
       method: "PUT",
       headers: myHeaders,
@@ -84,6 +85,7 @@ export default function Profile() {
   }
 
   useEffect(() => {
+    //fetching user details
     fetch(
       `https://devacc3.pythonanywhere.com//accounts/interviewee_get/${sap}`,
       requestOptions
