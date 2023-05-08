@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { Button, Grid, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import Loader from './Loader';
 
 
@@ -15,9 +15,9 @@ export default function Scorecard() {
   const [user, setUser] = useState();
   const s = localStorage.getItem("sapmod")
   const token = localStorage.getItem("token")
-  const [value, setValue] = React.useState('1');
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const [qtype, setQtype] = React.useState('');
+  const handleChange = (event) => {
+    setQtype(event.target.value);
   };
 
 
@@ -67,7 +67,7 @@ export default function Scorecard() {
               <Grid item md={6}></Grid>
               <Grid item md={12}>Resume Link: <div style={{ color: 'blue' }}>{user.interviewee.application.resume_link}</div></Grid>
               <Grid item md={12}>Github Link:{(user.interviewee.application.stack).map((k, i) => {
-                console.log(i+1);
+                //console.log(i + 1);
                 return (
                   <>
                     <Chip
@@ -86,9 +86,33 @@ export default function Scorecard() {
           </Grid>
         </Grid>
 
-
         <Grid container>
-          <Box sx={{ width: '100%', typography: 'body1', marginLeft: "5vw", marginRight: "5vw" }}>
+
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={qtype}
+                label="Question Type"
+                onChange={handleChange}
+              >
+                {(user.interviewee.application.stack).map((k, i) => {
+                    console.log(k.name);
+                    return (
+                      <>
+                      <MenuItem value={i}>{k.name}</MenuItem>
+                      </>
+                    )
+                  })}
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+          {/* <Box sx={{ width: '100%', typography: 'body1', marginLeft: "5vw", marginRight: "5vw" }}>
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <TabList onChange={handleChange} aria-label="lab API tabs example">
@@ -110,13 +134,8 @@ export default function Scorecard() {
                   </>
                 )
               })}
-
-
-              {/* <TabPanel value="1">Item One</TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel> */}
             </TabContext>
-          </Box>
+          </Box> */}
         </Grid>
       </> : <><Loader></Loader></>}
     </>
