@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   [theme.breakpoints.up("md")]: {
     card1: {
-      height: "15vh",
+      height: "25vh",
       width:"18vw"
     },
   },
