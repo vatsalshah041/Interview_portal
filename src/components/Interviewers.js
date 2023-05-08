@@ -1,7 +1,10 @@
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
 import { Grid } from "@mui/material";
+import '../styles/interviewer.css'
 
 function stringToColor(string) {
   let hash = 0;
@@ -34,19 +37,41 @@ function stringAvatar(name) {
 
 export default function Interviewers(props) {
 
+  
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+
   return (
     <Grid container>
-      <Grid item sm={12}>
+      <Grid item sm={12} sx={{margin:'15px',backgroundColor:'#5154ce80',padding:'10px',borderRadius:'20px'}}>
         <Grid style={{ margin: "10px" }}>
-          <h3 style={{ textAlign: "left" }}>Mentors: </h3>
+          <h3 style={{ textAlign: "left" ,color:'white'}}>Mentors: </h3>
         </Grid>
         <Grid style={{ margin: "10px" }}>
         <Stack direction="row" spacing={2}>
           {props.data.interviewers
             .filter((data) => (data.role === "TE" || data.role==="BE"))
             .map((interviewer, i) => (
+              
               <>
-              <div>hii</div>
+              {/* {console.log(interviewer)} */}
+              <Item sx={{backgroundImage:'url("photo.jpg")'}}>
+                <img src="photo.jpg"></img>
+              <div className="class1">
+              <b>{interviewer.role}</b>
+              <br></br>
+              <span>{interviewer.user.name}</span>
+
+              </div>
+
+              </Item>
+              
               </>
               // <div key={i} style={{ margin: "10px" }}>
               //   <Avatar

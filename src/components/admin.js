@@ -9,6 +9,7 @@ import PanelDetails from "./PanelDetails";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import {Button} from "@mui/material";
+import { blueGrey } from "@mui/material/colors";
 
 export default function CollapsibleTable() {
 
@@ -61,7 +62,7 @@ let config = {
   maxBodyLength: Infinity,
   url: '//devacc3.pythonanywhere.com/accounts/panel_details/',
   headers: { 
-    'Authorization': 'Token 900226a193560407f57a6b5af69eb3d691314a2b', 
+    'Authorization': token, 
     'Cookie': 'csrftoken=C4blmkJPhh0AuFtWyLpjeYA0BvfQgeASQY6l54W7HxWWgjtTKsCumGnhiSxj998Y; sessionid=x3ims0rx6tw40sv6hp7sd6ypz9g6cqq5'
   }
 };
@@ -73,6 +74,7 @@ let config = {
         const response = await axios.request(config);
         console.log((response.data));
         setUser(response.data)
+        console.log((response.data));
       }
       catch (error) {
         console.log(error);
@@ -85,16 +87,20 @@ let config = {
 
   let stackName = [];
   user.map((item) => {
+    console.log(item);
     stackName.push(item.name);
     return item;
   });
 
   return (
-      <Grid item sm={12}>
+      <Grid item sm={12} sx={{backgroundImage:'url("bg.png")'}}>
         <div style={{ clear: "both" }}>
           <Tabs value={value} onChange={handleChange} centered>
             {stackName.map((item, index) => (
+              <>
+              {console.log(item)}
               <Tab label={item} key={index} />
+              </>
             ))}
           </Tabs>
           <Button
