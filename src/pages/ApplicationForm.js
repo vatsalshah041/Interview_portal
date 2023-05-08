@@ -1,11 +1,11 @@
 import React from "react";
-import Details from "../components/Details";
+import Apply from "../components/Apply";
 import SideNavbar from "../components/SideNavbar";
 const ApplicationForm = () => {
   return (
     <div>
-      <SideNavbar />
-      <Details />
+      {/* <Details /> */}
+       <Apply/>
     </div>
   );
 };
