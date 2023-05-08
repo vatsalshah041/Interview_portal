@@ -1,9 +1,18 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import Faq from "react-faq-component";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Typography";
 
-const data = {
-  title: "FAQ's Section ",
+
+const config = {
+  animate: true,
+  expandIcon: "+",
+  collapseIcon: "-",
+};
+
+const data = { 
+  title:"General FAQs" ,
   rows: [
     {
       title: "Is it okay if I don't complete all the tasks?",
@@ -40,8 +49,12 @@ const data = {
 };
 
 const styles = {
-  titleTextColor: "#09c1d7",
-  rowTitleColor: "#09c1d7",
+  boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+  boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
+  titleTextColor: "#4F3A7B",
+  rowTitleColor: "#684CA3",
+  rowContentTextSize: '16px',
+  //rowContentColor: '#684CA3',
 };
 
 export default function FAQ() {
@@ -52,11 +65,22 @@ export default function FAQ() {
           item
           sm={12}
           md={12}
-          sx={{
-            margin: "15px",
-          }}
+          
         >
-          <Faq data={data} styles={styles} />
+          <Box sx={{width:"100%",height:"20vh", backgroundColor:"#EFE8FF",marginTop:0,boxShadow:"0px 15px 10px -17px #111"}}>
+            <Typography sx={{fontWeight:"bold", paddingTop:"5vh",color:"#4F3A7B",fontSize:"2.5rem"}}>
+              FAQs
+            </Typography>
+            <Typography sx={{color:"#4F3A7B",fontSize:"1rem"}}>
+              Need Answers? Find them here...
+            </Typography>
+          </Box>
+          <Box sx={{margin: "30px"}}> 
+          
+          <Faq data={data} styles={styles} config={config}/>
+          </Box>
+          
+          
         </Grid>
       </Grid>
     </div>
