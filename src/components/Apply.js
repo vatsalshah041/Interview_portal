@@ -143,7 +143,7 @@ function Apply() {
 
                  justifyContent:"center"}}>Confirm Details</Button>
               <Link to='/dashboard'>
-              <Typography align="right" sx={{marginRight:"2vw"}} > Skip for now ></Typography>
+              <Typography align="right" sx={{marginRight:"2vw"}} > Skip for now {'>'}</Typography>
               </Link>
               </div>
              

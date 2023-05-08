@@ -13,7 +13,7 @@ const ResourcesData = (props) => {
 	useEffect(() => {
 		var config = {
 			method: "get",
-			url: "https://unicodeinterview.pythonanywhere.com/accounts/resources/",
+			url: "https://devacc3.pythonanywhere.com/accounts/resources/",
 			headers: {
 				Authorization: `Token ${localStorage.getItem("token")}`,
 			},
@@ -31,7 +31,7 @@ const ResourcesData = (props) => {
 			<Grid>
 				{data.map((item, i) => (
 					<React.Fragment key={i}>
-						<span>{item.name === props.stack ? item.name : ""}</span>
+						{/* <span>{item.name === props.stack ? item.name : ""}</span> */}
 						<iframe
 							src={item.name === props.stack ? item.resources : ""}
 							width="100%"
