@@ -9,7 +9,7 @@ function Apply() {
   return (
     <div className="cover_div">
       <Box sx={{paddingBottom:"9vh",paddingTop:"9vh"}}>
-      <Box id="box_apply" sx={{justfiyContent:"center",alignItems:"center",marginLeft:"45vh",marginRight:"45vh",borderRadius:"20px",backgroundColor:"white !important",paddingBottom:"1vh"}}>
+      <Box id="box_apply" sx={{justfiyContent:"center",alignItems:"center",marginLeft:"45vh",marginRight:"45vh",borderRadius:"8.3px",backgroundColor:"white !important",paddingBottom:"1vh"}}>
               <Typography sx={{fontWeight:"bold", paddingTop:"4vh",color:"#5154CE",fontSize:"2rem"}}>
                 Application Form
               </Typography>
