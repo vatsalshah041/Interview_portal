@@ -12,25 +12,12 @@
   background-color: #09c1d7 !important;
 }
 .class1{
-  /* background-image: url('../images/image3.png'); */
-  /* height:100vh; */
-  /* position: relative; */
-  /* width: 100vw;
-  height: 100vh; */
-  /* left: 392px;
 
-  top: 0px; */
-/* background-repeat: 0; */
-  /* background-color: aquamarine; */
-    /* height: 982px;
-    width: 100vw;
-    right:450px;
-    left: 392px; */
- 
+    
     background-size: cover;
     
     /* background-image: linear-gradient(to bottom right,  white, #D7B4F3); */
-    background-image: linear-gradient(190deg, white 50%, #E4A0F7 100%);
+    background-image: linear-gradient(190deg, white 50%, #7B5BBC 100%);
 
 
 }
