@@ -110,10 +110,11 @@ export default function BasicTabs() {
               aria-label="simple tabs example"
             >
               <Tab label="Frontend" {...a11yProps(0)} />
-              <Tab label="Backend" {...a11yProps(1)} />
-              <Tab label="Design" {...a11yProps(2)} />
-              <Tab label="App" {...a11yProps(3)} />
-              <Tab label="Git Basics" {...a11yProps(4)} />
+              <Tab label="Django" {...a11yProps(1)} />
+              <Tab label="Node" {...a11yProps(2)} />
+              <Tab label="Flutter" {...a11yProps(3)} />
+              <Tab label="React Native" {...a11yProps(4)} />
+              <Tab label="Design" {...a11yProps(5)} />
             </Tabs>
           </AppBar>
         </Grid>
@@ -123,17 +124,21 @@ export default function BasicTabs() {
             <TaskData stack={1}/>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            Item 2
+            <TaskData stack={3}/>
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Item 3
+            <TaskData stack={5}/>
           </TabPanel>
           <TabPanel value={value} index={3}>
-            Item 4
+          <TaskData stack={2}/>
           </TabPanel>
           <TabPanel value={value} index={4}>
-            Item 5
+          <TaskData stack={7}/>
           </TabPanel>
+          {/* Design (Bacha hai) */}
+          {/* <TabPanel value={value} index={5}>
+          <TaskData stack={7}/>
+          </TabPanel> */}
         </Grid>
       </Box>
       {/* </Grid> */}

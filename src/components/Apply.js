@@ -76,7 +76,7 @@ function Apply() {
       try {
         const response = await axios.request(config);
         console.log(JSON.stringify(response.data));
-        
+
       }
       catch (error) {
         console.log(error);
@@ -363,15 +363,13 @@ function Apply() {
               "&:hover": {
                 color: 'white',
                 backgroundColor: '#CBC3E3'
-              },
-
-              justifyContent: "center"
+              },justifyContent: "center"
             }} onClick={submit}>Confirm Details</Button>
             <Link to='/dashboard'>
-              <Typography align="right" sx={{ marginRight: "2vw" }} > Skip for now-- </Typography>
+              <Typography align="right" sx={{ marginRight: "2vw" }} > Skip for now-{'>'} </Typography>
             </Link>
           </div>
-
+             
         </Box>
 
       </Box>

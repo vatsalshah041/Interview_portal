@@ -39,7 +39,7 @@ const TaskData = (props) => {
   useEffect(() => {
     var config = {
       method: "get",
-      url: "https://unicodeinterview.pythonanywhere.com/accounts/tasks/",
+      url: "https://devacc3.pythonanywhere.com/accounts/tasks/",
       headers: {
         Authorization: `Token ${localStorage.getItem("token")}`,
       },
@@ -48,6 +48,7 @@ const TaskData = (props) => {
     axios(config)
       .then(function (response) {
         setData(response.data);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -55,92 +56,107 @@ const TaskData = (props) => {
   }, []);
   console.log(props.stack);
   console.log(data);
+
+  // useEffect(()=>{
+
+  //   const config={
+  //     headers: {
+  //       Authorization: `Token ${localStorage.getItem("token")}`,
+  //     },
+  //   }
+
+  //   axios.get('https://devacc3.pythonanywhere.com/accounts/tasks/',config).then((res)=>{
+  //     console.log(res.data)
+  //   })
+  // },[])
+
+
   return (
     <div>
-      <Grid>
-        {data.map((item, index) => (
-          <>
-            <Card
-              key={index}
+  <Grid>
+    {data.map((item, index) => (
+      // Only render the card if item.stack matches props.stack
+      props.stack === item.stack && (
+        <Card
+          key={index}
+          sx={{
+            display: "flex",
+            mb: 5,
+            boxShadow:
+              " inset 0 -3em 3em rgba(0,0,0,0.1), 0 0  0 2px rgb(255,255,255), 0.3em 0.3em 1em rgba(0,0,0,0.3)",
+          }}
+          onClick={() => {
+            setResource(item.task_resources);
+            handleOpen();
+          }}
+        >
+          <Box
+            sx={{
+              width: { xs: 31, md: 80 },
+              height: { xs: 31, md: 80 },
+              borderRadius: 50,
+              backgroundColor: "#09c1d7",
+              textAlign: "center",
+              verticalAlign: "center",
+              mt: 2,
+              ml: 2,
+            }}
+          >
+            <Typography
+              component="div"
+              variant="h2"
               sx={{
-                display: "flex",
-                mb: 5,
-
-                boxShadow:
-                  " inset 0 -3em 3em rgba(0,0,0,0.1), 0 0  0 2px rgb(255,255,255), 0.3em 0.3em 1em rgba(0,0,0,0.3)",
-              }}
-              onClick={() => {
-                setResource(item.task_resources);
-                handleOpen();
+                color: "white",
+                width: { xs: 31, md: 80 },
+                height: { xs: 31, md: 80 },
+                borderRadius: 50,
+                mt: { xs: 1, md: 2 },
               }}
             >
-              <Box
-                sx={{
-                  width: { xs: 31, md: 80 },
-                  height: { xs: 31, md: 80 },
-                  borderRadius: 50,
-                  backgroundColor: "#09c1d7",
-                  textAlign: "center",
-                  verticalAlign: "center",
-                  mt: 2,
-                  ml: 2,
-                }}
-              >
-                <Typography
-                  component="div"
-                  variant="h2"
-                  sx={{
-                    color: "white",
-                    width: { xs: 31, md: 80 },
-                    height: { xs: 31, md: 80 },
-                    borderRadius: 50,
-                    mt: { xs: 1, md: 2 },
-                  }}
-                >
-                  {item.stack === props.stack ? item.id : "01"}
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-
-                  flexDirection: "column",
-                }}
-              >
-                <CardContent sx={{ flex: "1 0 auto" }}>
-                  <Typography variant="h5" sx={{ textAlign: "left" }}>
-                    {item.stack === props.stack
-                      ? item.task_question
-                      : "Question"}
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    color="text.secondary"
-                    component="div"
-                    sx={{
-                      textAlign: "left",
-                      display: { xs: "none", sm: "block" },
-                    }}
-                  >
-                    {item.stack === props.stack ? item.task_description : "Desc"}
-                  </Typography>
-                </CardContent>
-              </Box>
-            </Card>
-          </>
-        ))}
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <iframe src={resource} title="resource" width="100%" height="100%" />
+              {item.stack === props.stack ? item.id : "01"}
+            </Typography>
           </Box>
-        </Modal>
-      </Grid>
-    </div>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <CardContent sx={{ flex: "1 0 auto" }}>
+              <Typography variant="h5" sx={{ textAlign: "left" }}>
+                {item.stack === props.stack
+                  ? item.task_question
+                  : "Question"}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                color="text.secondary"
+                component="div"
+                sx={{
+                  textAlign: "left",
+                  display: { xs: "none", sm: "block" },
+                }}
+              >
+                {item.stack === props.stack ? item.task_description : "Desc"}
+              </Typography>
+            </CardContent>
+          </Box>
+        </Card>
+      )
+    ))}
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box sx={style}>
+        <iframe src={resource} title="resource" width="100%" height="100%" />
+      </Box>
+    </Modal>
+  </Grid>
+</div>
+
   );
 };
 
