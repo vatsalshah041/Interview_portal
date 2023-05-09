@@ -338,7 +338,7 @@ makeRequest1();
                       marginTop: "30px",
 
                       borderRadius: 30,
-                      width: "110px"
+                      width: "110px"  
                     }}
                     key={index}
                     label={item.name}
