@@ -4,9 +4,14 @@ import '../styles/application.css'
 import DescriptionIcon from '@mui/icons-material/Description';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Apply() {
 
+  const navigate = useNavigate();
   const [resume, setResume] = useState("")
   const [r1, setR1] = useState("")
   const [r2, setR2] = useState("")
@@ -23,8 +28,9 @@ function Apply() {
   const [flutter, setFlutter] = useState(false);
   const [fsdj, setFsdj] = useState(false);
 
-
+ 
   const submit = () => {
+   
     console.log(r1, r2, r3, r4, r5, r6, r7)
     const techStack = {
       "stack": [
@@ -74,9 +80,15 @@ function Apply() {
 
     async function makeRequest() {
       try {
+       
         const response = await axios.request(config);
         console.log(JSON.stringify(response.data));
-
+        //toast('Form submitted successfully')
+        //// setTimeout(() => {
+        //     navigate('/dashboard')
+        //   // }, 5000);
+        // }});
+        navigate('/dashboard');
       }
       catch (error) {
         console.log(error);
@@ -365,6 +377,10 @@ function Apply() {
                 backgroundColor: '#CBC3E3'
               },justifyContent: "center"
             }} onClick={submit}>Confirm Details</Button>
+            {/* <ToastContainer
+              autoClose={2000}
+              position="top-center"
+              /> */}
             <Link to='/dashboard'>
               <Typography align="right" sx={{ marginRight: "2vw" }} > Skip for now-{'>'} </Typography>
             </Link>

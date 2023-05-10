@@ -7,6 +7,9 @@ import { Grid } from "@mui/material";
 import TimeLine from "../components/Timeline";
 import TabPanel from "../components/TasksSection";
 import NoOfApp from "../components/NoOfApp";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import  Apply from "../components/Apply";
 
 const useStyles = makeStyles((theme) => ({
 	flexItem: {
@@ -21,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Dashboard = () => {
+	const query = new URLSearchParams(window.location.search);
+	const myParam = query.get("success");
+
+	if(myParam === 'true'){
+	toast.success('Registered Successfully');
+	} 
 	const classes = useStyles();
 
 	return (

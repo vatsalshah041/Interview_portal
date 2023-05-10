@@ -63,6 +63,7 @@ const Login = () => {
                   else {
                     localStorage.setItem("sapid", formik.values.username);
                     console.log("Interviwee")
+                    // alert("Success!");
                     navigate('/dashboard')
                   }
                 } else {
@@ -74,40 +75,6 @@ const Login = () => {
               .catch(function (error) {
                 console.log(error);
               });
-
-
-      // var FormData = require("form-data");
-      // var data = new FormData();
-      // data.append("sapid", values.username);
-      // data.append("password", values.password);
-      // var config = {
-      //   method: "post",
-      //   url: "devacc3.pythonanywhere.com/accounts/login/",
-      //   data: data,
-      // };
-
-      // axios(config)
-      //   .then(function (response) {
-      //     console.log(response.data);
-      //     if (response.data.token) {
-      //       if (response.data.is_interviewer) {
-      //         console.log("INTERVIEWER")
-      //         navigate('/admin')
-      //       }
-      //       else {
-      //         localStorage.setItem("sapid", formik.values.username);
-      //         console.log("Interviwee")
-      //         navigate('/dashboard')
-      //       }
-      //     } else {
-      //       navigate("/signup");
-      //       alert("Invalid cred");
-      //     }
-      //     localStorage.setItem("token", response.data.token);
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
     },
   });
 
