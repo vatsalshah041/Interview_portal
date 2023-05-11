@@ -14,7 +14,7 @@ import  Apply from "../components/Apply";
 const useStyles = makeStyles((theme) => ({
 	flexItem: {
 		display: "flex",
-		height: "100%",
+		height: "90%",
 		backgroundColor: "#F2F3F7",
 		justifyContent: "space-around",
 		[theme.breakpoints.down("md")]: {
@@ -24,12 +24,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Dashboard = () => {
-	const query = new URLSearchParams(window.location.search);
-	const myParam = query.get("success");
+	// const query = new URLSearchParams(window.location.search);
+	// const myParam = query.get("success");
 
-	if(myParam === 'true'){
-	toast.success('Registered Successfully');
-	} 
+	// if(myParam === 'true'){
+	// toast.success('Registered Successfully');
+	// } 
 	const classes = useStyles();
 
 	return (
@@ -39,7 +39,7 @@ const Dashboard = () => {
 		      <Grid item xs={10} lg={12} md={12} mt={3} ml={7} mb={2}>
 		        <ProfileProgress />
 		      </Grid>
-		      <Grid item xs={10} lg={12} md={12} mt={5} ml={7} >
+		      <Grid item xs={10} lg={12} md={12} mt={5} mb={0} ml={7} >
 		        <InterviewScheduleCard />
 		      </Grid>
 		    </Grid>
