@@ -109,6 +109,7 @@ export default function Resources() {
                   <Tab label="Node" {...a11yProps(2)} />
                   <Tab label="Flutter" {...a11yProps(3)} />
                   <Tab label="React Native" {...a11yProps(4)} />
+                  <Tab label="Design" {...a11yProps(5)} />
                 </Tabs>
               </AppBar>
             </Grid>
@@ -127,6 +128,9 @@ export default function Resources() {
           </TabPanel>
           <TabPanel value={value} index={4}>
             <ResourcesData stack="ReactNative" />
+          </TabPanel>
+          <TabPanel value={value} index={5}>
+            <ResourcesData stack="Design" />
           </TabPanel>
         </Box>
       </Grid>
