@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import axios from "axios";
+import Loader from "./Loader";
 
 const ResourcesData = (props) => {
 	const [data, setData] = useState([
@@ -29,16 +30,21 @@ const ResourcesData = (props) => {
 	return (
 		<>
 			<Grid>
-				{data.map((item, i) => (
+				{data?<>
+					{data.map((item, i) => (
 					<React.Fragment key={i}>
 						{/* <span>{item.name === props.stack ? item.name : ""}</span> */}
 						<iframe
-							src={item.name === props.stack ? item.resources : ""}
+							src={item.name === props.stack ? item.resources :""}
 							width="100%"
 							height="1000px"
 						/>
 					</React.Fragment>
 				))}
+				</>:<>
+				<Loader></Loader>
+				</>}
+				
 			</Grid>
 		</>
 	);

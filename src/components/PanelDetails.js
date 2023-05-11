@@ -208,8 +208,8 @@ export default function PanelDetails(props) {
                   <TableCell component="th" scope="row" align="center">
                     {row.name}
                   </TableCell>
-                  {/* <CustomTableCell values={row.stacks}></CustomTableCell> */}
-                  <TableCell >{row.stacks}</TableCell>
+                  <CustomTableCell values={row.stacks}></CustomTableCell>
+                  {/* <TableCell >{row.stacks}</TableCell> */}
                   <TableCell align="center">{row.schedule}</TableCell>
                   <TableCell align="center"><Button onClick={() => mod(i)}><AssignmentIcon /></Button></TableCell>
                 </TableRow>

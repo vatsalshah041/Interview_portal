@@ -3,10 +3,6 @@ import { useEffect } from 'react';
 import { Button, Grid, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -20,10 +16,11 @@ export default function Scorecard() {
   const s = localStorage.getItem("sapmod")
   const token = localStorage.getItem("token")
   const [qtype, setQtype] = React.useState(1);
-  const handleChange = (event) => {
-    setQtype(event.target.value);
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
-
+const [stackItems,setStackItems]=useState();
 
   useEffect(() => {
     const axios = require('axios');
@@ -45,6 +42,7 @@ export default function Scorecard() {
         const response = await axios.request(config);
         //console.log(response.data);
         setUser(response.data)
+        setStackItems((response.data).interviewee.application.stack);
       }
       catch (error) {
         console.log(error);
@@ -55,9 +53,11 @@ export default function Scorecard() {
 
 
   }, [])
+  
   return (
     <>
       {user ? <>
+      
 
         <Grid container >
           <Grid item md={12} sx={{ padding: "10px", backgroundColor: "#7290df", marginTop: "5vw", marginLeft: "5vw", marginRight: "5vw", borderTopLeftRadius: "15px", borderTopRightRadius: "15px" }}>
@@ -91,32 +91,41 @@ export default function Scorecard() {
         </Grid>
 
         <Grid container>
-
+          {(stackItems.length>0)?<>
+            {console.log(stackItems)}
+            <Box sx={{ width: '100%', typography: 'body1' }}>
+      <TabContext key={value.toString()} value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            {(stackItems).map((k,i)=>{
+              {console.log(k);}
+              return(
+                <>
+                <Tab label={k.name} value={(i+1).toString()} key={(i+1).toString()} />
+                </>
+              )
+            })}
+          </TabList>
+        </Box>
+        {(stackItems).map((k,i)=>{
+              return(
+                <>
+                <TabPanel value={(i+1).toString()} key={(i+1).toString()}>{k.name}</TabPanel>
+                </>
+              )
+            })}
+      </TabContext>
+    </Box>
           
-          <Box sx={{ width: '100%', typography: 'body1', marginLeft: "5vw", marginRight: "5vw" }}>
-            <TabContext value={qtype}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <TabList onChange={handleChange} aria-label="lab API tabs example">
-                  {(user.interviewee.application.stack).map((k, i) => {
-                    console.log(k.name);
-                    return (
-                      <>
-                        <Tab label={k.name} key={i} />
-                      </>
-                    )
-                  })}
-                </TabList>
-              </Box>
-              {(user.interviewee.application.stack).map((k, i) => {
+          </>:<></>}
+        
 
-                return (
-                  <>
-                    <TabPanel value={i} key={i}>{k.repo_link}</TabPanel>
-                  </>
-                )
-              })}
-            </TabContext>
-          </Box>
+<Grid item md={12} sx={{ padding: "10px", backgroundColor: "#7290df", marginTop: "5vw", marginLeft: "5vw", marginRight: "5vw", borderTopLeftRadius: "15px", borderTopRightRadius: "15px" }}>
+            <Typography variant="h4"></Typography>
+          </Grid>
+          <Grid item md={12} sx={{ marginLeft: "5vw", marginRight: "5vw" }}>
+            
+          </Grid>
         </Grid>
       </> : <><Loader></Loader></>}
     </>
