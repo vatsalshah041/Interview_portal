@@ -4,6 +4,7 @@ import axios from "axios";
 import Loader from "./Loader";
 
 const ResourcesData = (props) => {
+	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([
 		{
 			id: "",
@@ -27,17 +28,25 @@ const ResourcesData = (props) => {
 				console.log(error);
 			});
 	}, []);
+
+	const handleIframeLoad = () => {
+		setLoading(false);
+	  };
+
 	return (
 		<>
-			<Grid>
+			<Grid>	
+			{loading && <Loader />}
 				{data?<>
 					{data.map((item, i) => (
 					<React.Fragment key={i}>
 						{/* <span>{item.name === props.stack ? item.name : ""}</span> */}
 						<iframe
+						onLoad={handleIframeLoad}
 							src={item.name === props.stack ? item.resources :""}
 							width="100%"
 							height="1000px"
+							// style={{ display: loading ? "none" : "block" }}
 						/>
 					</React.Fragment>
 				))}

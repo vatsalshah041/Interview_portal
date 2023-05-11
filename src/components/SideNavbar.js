@@ -30,7 +30,7 @@ function ResponsiveDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       
-      {matches?(<><div>bye</div></>):(<><div>{console.log("hii")}</div></>)}
+      {matches?(<><div>bye</div></>):(<><div>{console.log()}</div></>)}
 
       <Box
         component="nav"
