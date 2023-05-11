@@ -44,39 +44,41 @@ export default function Profile() {
   });
 
 
-  // async function handleSave() {
-  //   console.log(user);
-  //   var raw2 = JSON.stringify({
-  //     user: {
-  //       name: user.name,
-  //       sapid: user.sapid,
-  //       grad_year: user.grad_year,
-  //       email: user.email,
-  //       password: user.pass,
-  //       confirm_password: user.pass,
-  //     },
-  //   });
-  //   console.log(user);
-  //   //post after save
-  //   var requestOptions2 = {
-  //     method: "PUT",
-  //     headers: myHeaders,
-  //     body: raw2,
-  //     redirect: "follow",
-  //   };
-  //   await fetch(
-  //     "https://devacc3.pythonanywhere.com/accounts/interviewee_update/",
-  //     requestOptions2
-  //   )
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       console.log(result);
-  //       window.location.reload();
-  //     })
-  //     .catch((error) => console.log("error", error));
+  async function handleSave() {
+    console.log(user);
+    setProfile(true)
+    setEdit(true)
+    // var raw2 = JSON.stringify({
+    //   user: {
+    //     name: user.name,
+    //     sapid: user.sapid,
+    //     grad_year: user.grad_year,
+    //     email: user.email,
+    //     password: user.pass,
+    //     confirm_password: user.pass,
+    //   },
+    // });
+    // console.log(user);
+    // //post after save
+    // var requestOptions2 = {
+    //   method: "PUT",
+    //   headers: myHeaders,
+    //   body: raw2,
+    //   redirect: "follow",
+    // };
+    // await fetch(
+    //   "https://devacc3.pythonanywhere.com/accounts/interviewee_update/",
+    //   requestOptions2
+    // )
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     console.log(result);
+    //     window.location.reload();
+    //   })
+    //   .catch((error) => console.log("error", error));
 
-  //   setUser(true)
-  // }
+    // setUser(true)
+  }
 
   useEffect(() => {
     //fetching user details
@@ -158,7 +160,6 @@ makeRequest1();
                   onChange={(e) => setUser(e.target.value)}
                   disabled
                   InputProps={{ disabled: edit }}
-                  //InputProps={{ disabled: false }}
                   sx={{
                     borderColor: "none",
                     [`& fieldset`]: {
@@ -182,7 +183,7 @@ makeRequest1();
                 </Typography>
                 <TextField my={1} fullWidth
                   disabled
-                  InputProps={{ disabled: edit }}
+                  // InputProps={{ disabled: edit }}
                   value={user.user.sapid}
                   sx={{
                     marginTop: "10px",
@@ -377,7 +378,7 @@ makeRequest1();
                     borderRadius: "10px"
                   }}
                   // sx={{ textTransform: "none", padding: "4% 10%" }}
-                  // onClick={handleSave}
+                   onClick={handleSave}
                 >
                   Save
                 </Button>

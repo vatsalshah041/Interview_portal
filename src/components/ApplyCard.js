@@ -1,5 +1,5 @@
 import { Card, Divider, Grid, Typography,Button} from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
@@ -34,10 +34,55 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ApplyCard = () => {
+  const [allow,setAllow]=useState();
   const classes = useStyles();
   const navigate=useNavigate();
+
+  useEffect(() => {
+
+    const axios = require('axios');
+    let sap=localStorage.getItem("sapid")
+    let t="Token "+localStorage.getItem("token")
+    let u="//devacc3.pythonanywhere.com/accounts/appl_num/"+sap;
+
+let config = {
+  method: 'get',
+  maxBodyLength: Infinity,
+  url: u,
+  headers: { 
+    'Authorization': 'Token b186ff38c64049f0cf0b3d4b57efdd63d33e3392', 
+    'Cookie': t
+  }
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.request(config);
+    console.log((response.data));
+    if(((response.data).Number)>=1)
+    {
+      setAllow(true);
+    }
+    else{
+      setAllow(false)
+    }
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
+makeRequest();
+
+
+  }, [])
+  
+
   return (
-    <Card className={classes.card1}>
+    <>
+    {(allow || !allow)?<>
+    
+      <Card className={classes.card1}>
       <Grid container item className={classes.flexItem} rowSpacing="20">
         <Grid item>
           <Typography sx={{textAlign:"left",ml:0,fontSize:"1.5em"}}>
@@ -54,11 +99,16 @@ const ApplyCard = () => {
                     color: 'white',
                     backgroundColor: '#CBC3E3'
                   },
-                  width:"110px",justifyContent:"center"}}>Apply</Button>
+                  width:"110px",justifyContent:"center"}}
+                  disabled={allow}
+                  >Apply</Button>
           </Typography>
         </Grid>
       </Grid>
     </Card>
+    </>:<></>}
+    
+    </>
   );
 };
 
