@@ -16,6 +16,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import Paper from '@mui/material/Paper';
 import { Typography } from "@mui/material";
 import { Toolbar } from "@material-ui/core";
+import '../styles/BroadDrawer.css';
+
 function BroadDrawer() {
   const navigate = useNavigate();
 
@@ -62,7 +64,7 @@ function BroadDrawer() {
       </Toolbar>
       </Box>
       <Divider />
-      <Paper elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mt:"20px",mb:"20px",backgroundColor:"#DADBFF",boxShadow:"2px 2px 2px white inset,0 6px 20px 0 rgba(0, 0, 0, 0.19)",borderRadius:"5%"}}>
+      <Paper  className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mt:"20px",mb:"20px"}}>
         <List>
         <ListItem button onClick={() => navigate("/profile")}>
           <ListItemIcon>
@@ -73,7 +75,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px",backgroundColor:"#DADBFF",boxShadow:"2px 2px 2px white inset,0 6px 20px 0 rgba(0, 0, 0, 0.19)",borderRadius:"5%"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
       <List>
         <ListItem button onClick={() => navigate("/faq")}>
           <ListItemIcon>
@@ -87,7 +89,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px",backgroundColor:"#DADBFF",boxShadow:"2px 2px 2px white inset,0 6px 20px 0 rgba(0, 0, 0, 0.19)",borderRadius:"5%"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
       <List>
         <ListItem button onClick={() => navigate("/dashboard")}>
           <ListItemIcon>
@@ -98,7 +100,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px",backgroundColor:"#DADBFF",boxShadow:"2px 2px 2px white inset,0 6px 20px 0 rgba(0, 0, 0, 0.19)",borderRadius:"5%"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
       <List>
         <ListItem button onClick={() => navigate("/login")}>
           <ListItemIcon>
@@ -109,7 +111,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px",backgroundColor:"#DADBFF",boxShadow:"2px 2px 2px white inset,0 6px 20px 0 rgba(0, 0, 0, 0.19)",borderRadius:"5%"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
       <List>
         <ListItem button onClick={() => navigate("/resources")}>
           <ListItemIcon>

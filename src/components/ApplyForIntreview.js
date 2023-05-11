@@ -8,17 +8,19 @@ import { CardActionArea, Grid } from "@mui/material";
 import { classNames } from "muicss/lib/js/lib/util";
 const useStyles = makeStyles((theme) => ({
   card1: {
+    
     boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)!important",
     borderRadius: "10px!important",
+    
   },
 }));
 
 export default function ApplyForIntreview() {
-  const classes = useStyles();
+  //const classes = useStyles();
   return (
     <Grid container>
       <Grid item xs={12}>
-        <Card className={classes.card1}>
+        <Card  sx={{height:"47vh!important",backgroundColor:"red"}}>
           <CardActionArea>
             <CardContent>
               <Typography
@@ -35,7 +37,7 @@ export default function ApplyForIntreview() {
                 variant="body2"
                 color="text.secondary"
                 mt={2}
-                sx={{ height: "200px" }}
+                sx={{ height: "200px" ,marginBottom:"300px"}}
               >
                 Application Form not live yet
               </Typography>
