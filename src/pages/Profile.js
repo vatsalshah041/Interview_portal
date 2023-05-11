@@ -282,6 +282,7 @@ makeRequest1();
 
 
             {!profile ? (
+              <>
               <Grid my={1}>
                 <Typography fullWidth sx={{ textAlign: "left", marginBottom: "5px" }}>
                   Password
@@ -308,6 +309,34 @@ makeRequest1();
                   />
                 </Grid>
               </Grid>
+              <Grid my={1}>
+                <Typography fullWidth sx={{ textAlign: "left", marginBottom: "5px" }}>
+                  Confirm Password
+                </Typography>
+                <Grid item xs={12}>
+                  <TextField
+                    disabled
+                    InputProps={{ disabled: edit }}
+                    value={user.pass}
+                    sx={{
+
+                      borderColor: "none",
+                      [`& fieldset`]: {
+
+                        borderRadius: 30,
+                        boxShadow: "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset"
+                      },
+                      backgroundColor: "white",
+                    }}
+                    onChange={(e) => setUser({ ...user, pass: e.target.value })}
+                    // label="Password"
+                    fullWidth
+
+                  />
+                </Grid>
+              </Grid>
+              </>
+              
             ) : null}
 
 
