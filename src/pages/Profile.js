@@ -17,6 +17,7 @@ export default function Profile() {
     e.preventDefault();
   };
   const [edit, setEdit] = useState(true);
+  const [pass,setPass]=useState("");
   const change = () => {
     setProfile(false);
     setEdit(false);
@@ -24,12 +25,6 @@ export default function Profile() {
   const [profile, setProfile] = useState(true);
   let sap = localStorage.getItem("sapid");
   let token = localStorage.getItem("token");
-  // const [user, setUser] = useState({
-  //   email: "",
-  //   grad_year: "",
-  //   name: "",
-  //   sapid: ""
-  // });
   const [user, setUser] = useState();
   const [info, setInfo] = useState();
   const [user1, setUser1] = useState();
@@ -48,56 +43,27 @@ export default function Profile() {
 
   async function handleSave() {
 
-    // var raw2 = JSON.stringify({
-    //   user: {
-    //     name: user.name,
-    //     sapid: user.sapid,
-    //     grad_year: user.grad_year,
-    //     email: user.email,
-    //     password: user.pass,
-    //     confirm_password: user.pass,
-    //   },
-    // });
-    // console.log(user);
-    // //post after save
-    // var requestOptions2 = {
-    //   method: "PUT",
-    //   headers: myHeaders,
-    //   body: raw2,
-    //   redirect: "follow",
-    // };
-    // await fetch(
-    //   "https://devacc3.pythonanywhere.com/accounts/interviewee_update/",
-    //   requestOptions2
-    // )
-    //   .then((response) => response.json())
-    //   .then((result) => {
-    //     console.log(result);
-    //     window.location.reload();
-    //   })
-    //   .catch((error) => console.log("error", error));
-
-    // setUser(true)
+    
     const axios = require('axios');
+    let t="Token "+localStorage.getItem("token")
 
-
-    let data = JSON.stringify({
+    let data = ({
       "user": {
         "name": info.name,
         "sapid": info.sapid,
         "grad_year": info.grad_year,
         "email": info.email,
-        "password": info.password,
-        "confirm_password": info.confirm_password
+        "password": pass,
+        "confirm_password": pass
       }
     });
-
+    console.log((data));
     let config = {
       method: 'put',
       maxBodyLength: Infinity,
-      url: 'https://devacc3.pythonanywhere.com/accounts/interviewee_update/',
+      url: '//devacc3.pythonanywhere.com/accounts/interviewee_update/',
       headers: { 
-        'Authorization': 'Token b186ff38c64049f0cf0b3d4b57efdd63d33e3392', 
+        'Authorization': t, 
         'Content-Type': 'application/json', 
         'Cookie': 'csrftoken=uxlPQsLGxNdIMQruSrXWrOYRtt86ZhHRSj3yzs7OowdMhzMy2dskVVu8aOTVaNxk; sessionid=zmqzegi0wuqvlef56i3uipyhtbim3gv8'
       },
@@ -166,7 +132,7 @@ export default function Profile() {
     async function makeRequest1() {
       try {
         const response = await axios.request(config1);
-        console.log(response.data);
+        //console.log(response.data);
         setUser1(response.data);
       } catch (error) {
         console.log(error);
@@ -176,10 +142,6 @@ export default function Profile() {
     makeRequest1();
   }, []);
 
-
-// useEffect(()=>{
-//   console.log(info);
-// },[info])
 
   return (
     <>
@@ -209,14 +171,13 @@ export default function Profile() {
                 </Grid>
                 <Grid container my={1}>
                   <Grid item lg={12} xs={12} md={12}>
-                    {/* <TextField
+                    <TextField
                       fullWidth
-                      value={edit ? info.name : user.user.name}
-                      onChange={(e)=>setInfo((prev)=>{
-                        return {...prev,'name':e.target.value};
-                      })}
-                      // disabled
-                      InputProps={{ disabled: false }}
+                      // value={edit ? info.name : user.user.name}
+                      value={info.name}
+                      onChange={(e) => setInfo(prev => ({ ...prev, name: e.target.value }))}
+                      disabled={edit}
+                      InputProps={{ disabled: edit }}
                       sx={{
                         borderColor: "none",
                         [`& fieldset`]: {
@@ -226,25 +187,7 @@ export default function Profile() {
                             "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important",
                         },
                       }}
-                    /> */}
-
-<TextField
-  fullWidth
-  // value={edit ? info.name : user.user.name}
-  value={info.name}
-  onChange={(e) => setInfo(prev => ({ ...prev, name: e.target.value }))}
-  disabled={edit}
-  InputProps={{ disabled: edit }}
-  sx={{
-    borderColor: "none",
-    [`& fieldset`]: {
-      borderRadius: 30,
-      borderColor: "none",
-      boxShadow:
-        "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important",
-    },
-  }}
-/>
+                    />
 
                   </Grid>
                 </Grid>
@@ -369,7 +312,7 @@ export default function Profile() {
                         <TextField
                           disabled
                           InputProps={{ disabled: edit }}
-                          value={info.pass}
+                          value={pass}
                           sx={{
                             borderColor: "none",
                             [`& fieldset`]: {
@@ -379,39 +322,13 @@ export default function Profile() {
                             },
                             backgroundColor: "white",
                           }}
-                          onChange={(e) => setInfo(prev => ({ ...prev, password: e.target.value }))}
+                          onChange={(e) => setPass(e.target.value)}
                           // label="Password"
                           fullWidth
                         />
                       </Grid>
                     </Grid>
-                    <Grid my={1}>
-                      <Typography
-                        fullWidth
-                        sx={{ textAlign: "left", marginBottom: "5px" }}
-                      >
-                        Confirm Password
-                      </Typography>
-                      <Grid item xs={12}>
-                        <TextField
-                          disabled
-                          InputProps={{ disabled: edit }}
-                          value={user.pass}
-                          sx={{
-                            borderColor: "none",
-                            [`& fieldset`]: {
-                              borderRadius: 30,
-                              boxShadow:
-                                "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset",
-                            },
-                            backgroundColor: "white",
-                          }}
-                          onChange={(e) => setInfo(prev => ({ ...prev, confirm_password: e.target.value }))}
-                          // label="Password"
-                          fullWidth
-                        />
-                      </Grid>
-                    </Grid>
+                    
                   </>
                 ) : null}
 
