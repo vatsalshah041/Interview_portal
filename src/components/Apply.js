@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Typography, TextField, Grid, Checkbox, Button } from "@mui/material";
+import { Box, Typography, TextField, Grid,  Button } from "@mui/material";
 import '../styles/application.css'
 import DescriptionIcon from '@mui/icons-material/Description';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -187,8 +187,9 @@ function Apply() {
                 GitHub Repo Link
               </Typography>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "3rem" }}>
-              <Checkbox value={1} onChange={handle} />
+            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "3rem"}}>
+              <input type="checkbox" className="cont" value={1} onChange={handle}/>
+              <span></span>
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
               <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
@@ -213,7 +214,8 @@ function Apply() {
               />
             </Grid>
             <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <Checkbox value={2} onChange={handle} />
+              <input type="checkbox" className="cont" value={2} onChange={handle}/>
+              <span></span>
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
               <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
@@ -240,7 +242,8 @@ function Apply() {
               />
             </Grid>
             <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <Checkbox value={3} onChange={handle} />
+              <input type="checkbox" className="cont" value={3} onChange={handle}/>
+              <span></span>
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
               <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
@@ -266,7 +269,8 @@ function Apply() {
               />
             </Grid>
             <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <Checkbox value={4} onChange={handle} />
+              <input type="checkbox" className="cont" value={4} onChange={handle}/>
+              <span></span>
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
               <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
@@ -292,7 +296,8 @@ function Apply() {
               />
             </Grid>
             <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <Checkbox value={5} onChange={handle} />
+              <input type="checkbox" className="cont" value={5} onChange={handle}/>
+              <span></span>
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
               <Typography align="left" sx={{ paddingLeft: "2.7rem", fontSize: "1rem" }}>
@@ -318,7 +323,8 @@ function Apply() {
               />
             </Grid>
             <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <Checkbox value={6} onChange={handle} />
+              <input type="checkbox" className="cont" value={6} onChange={handle} />
+              <span></span>
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
               <Typography align="left" sx={{ paddingLeft: "2.7rem", fontSize: "1rem" }}>
@@ -343,7 +349,9 @@ function Apply() {
               />
             </Grid>
             <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <Checkbox value={7} onChange={handle} />
+
+              <input type="checkbox" className="cont" value={7} onChange={handle}/>
+              <span></span>    
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
               <Typography align="left" sx={{ paddingLeft: "2.7rem", fontSize: "1rem" }}>

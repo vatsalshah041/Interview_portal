@@ -1,0 +1,49 @@
+/* 
+.component-dash-apply{
+
+    height:17vh !important;
+    
+}
+.component-dash-nofoapp{
+
+    padding-bottom:3vh !important;
+
+}
+.component-dash-schedule{
+  
+    margin-left:4vw !important;
+    height:30vh !important;
+
+}
+.component-dash-progress{
+  
+    margin-left:4vw !important;
+}
+ */
+ .timeline-img{
+    padding-top:0vh;
+    height: 40vh !important;
+}
+#cover-dashboard-div{
+    height:100%;
+    
+    background-image: url("../images/image4.png");
+    background-size: cover; 
+   }
+@media screen and (max-width: 600px) {
+    .timeline-img{
+        padding-top:3vh;
+        height: 40vh !important;
+    }
+    .nav-rem{
+        display:none;
+        display:hidden;
+    }
+    #cover-dashboard-div{
+        height:100%;
+        
+        background-image: url("../images/image4.png");
+        background-size: cover; 
+       }
+    
+}

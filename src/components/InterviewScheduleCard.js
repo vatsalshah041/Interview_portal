@@ -3,19 +3,23 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   flexItem: {
+    paddingTop:"1vh",
+    paddingLeft:"2vh",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "left",
+    alignItems: "left",
+    // alignItems: "center",
+    // justifyContent: "space-around",
   },
   card1: {
-    padding: "6%",
+    paddingBottom: "73%",
     marginTop:"3px",
     boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)!important",
     borderRadius: "10px!important",
   },
   [theme.breakpoints.up("md")]: {
     card1: {
-      height: "24vh",
+      height: "35vh",
     },
   },
   divider: {
@@ -37,7 +41,7 @@ const InterviewScheduleCard = () => {
     <Card className={classes.card1}>
       <Grid container item className={classes.flexItem} rowSpacing="20">
         <Grid item>
-          <Typography sx={{textAlign:"left",ml:0,fontSize:"1.5em"}}>
+          <Typography sx={{textAlign:"left",ml:0,fontSize:"1.3em"}}>
             <strong>Interview</strong>
           </Typography>
         </Grid>

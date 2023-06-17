@@ -12,24 +12,28 @@ import TaskData from "./TaskData";
 
 const useStyles = makeStyles((theme) => ({
   flexItem: {
+    fontColor:"#4F3A7B !important",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-around",
   },
   card1: {
+    
+    marginRight:"4vw",
+    marginTop:"2vh !important",
     padding: "6%",
-    //   height: "28vh",
-    // boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)!important",
     borderRadius: "10px!important",
   },
   divider: {
     width: "100%",
   },
   header: {
+    fontColor:"#4F3A7B !important",
     display: "flex",
     //   justifyContent: "flex-start",
   },
   text: {
+    fontColor:"#4F3A7B ",
     fontSize: "14px!important",
   },
   scrollButtons: {

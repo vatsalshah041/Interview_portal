@@ -4,20 +4,23 @@ import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   flexItem: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "left",
+    alignItems: "left",
+   
   },
   card1: {
     padding: "6%",
     marginTop:"3px",
     boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)!important",
-    borderRadius: "10px!important",
+   
   },
   [theme.breakpoints.up("md")]: {
     card1: {
-      height: "25vh",
-      width:"18vw"
+      marginLeft:"-1vw !important",
+      height: "21vh",
+      width:"18vw",
+      borderRadius: "",
+      borderColor:"red",
     },
   },
   divider: {
@@ -85,7 +88,7 @@ makeRequest();
       <Card className={classes.card1}>
       <Grid container item className={classes.flexItem} rowSpacing="20">
         <Grid item>
-          <Typography sx={{textAlign:"left",ml:0,fontSize:"1.5em"}}>
+          <Typography sx={{textAlign:"left",ml:0,fontSize:"1.3em"}}>
             <strong>Apply for Interview</strong>
           </Typography>
         </Grid>
