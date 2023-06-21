@@ -149,7 +149,7 @@ function Apply() {
   return (
     <div className="cover_div">
       <Box sx={{ paddingBottom: "9vh", paddingTop: "9vh" }}>
-        <Box id="box_apply" sx={{ justfiyContent: "center", alignItems: "center", marginLeft: "45vh", marginRight: "45vh", borderRadius: "8.3px", backgroundColor: "white !important", paddingBottom: "1vh" }}>
+        <Box id="box_apply" sx={{ justfiyContent: "center", alignItems: "center", marginLeft: "40vh", marginRight: "40vh", borderRadius: "8.3px", backgroundColor: "white !important", paddingBottom: "1vh" }}>
 
           <Typography sx={{ fontWeight: "bold", paddingTop: "4vh", color: "#5154CE", fontSize: "2rem" }}>
             Application Form
@@ -159,7 +159,7 @@ function Apply() {
               <DescriptionIcon sx={{ fontSize: "2.9rem", paddingTop: "1rem", color: "#5154CE" }} />
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", fontSize: "1.2rem" }}>
+              <Typography align="left" sx={{ paddingLeft: "2rem", fontSize: "1.2rem" }}>
                 Resume Link
               </Typography>
               <TextField
@@ -183,20 +183,24 @@ function Apply() {
               <GitHubIcon sx={{ fontSize: "2.9rem", paddingTop: "1rem", color: "#5154CE" }} />
             </Grid>
             <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1.2rem" }}>
+              <Typography align="left" sx={{ paddingLeft: "2rem", paddingTop: "1rem", fontSize: "1.2rem" }}>
                 GitHub Repo Link
               </Typography>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "3rem"}}>
-              <input type="checkbox" className="cont" value={1} onChange={handle}/>
-              <span></span>
+            <Grid item xs={1} lg={1} md={1} sx={{paddingTop: "3rem"}}>
             </Grid>
-            <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
-                Frontend
+            <Grid item xs={11} lg={11} md={11}> 
+              <Grid container >
+                <Grid item xs={3} lg={3} md={3}  >
+                <input type="checkbox" style={{marginLeft:"4vw",marginTop:"3rem"}} className="cont" value={1} onChange={handle}/>
+                <span></span>
+                </Grid>
+                <Grid item xs={9} lg={9} md={9}>
+                <Typography align="left" sx={{ paddingLeft: "2.6rem", paddingTop: "1rem" }}>
+                  Frontend
               </Typography>
-              <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh" }}
+                <TextField
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"0.7rem"}}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled
@@ -212,16 +216,23 @@ function Apply() {
                 value={r1}
                 onChange={(e) => setR1(e.target.value)}
               />
+
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <input type="checkbox" className="cont" value={2} onChange={handle}/>
-              <span></span>
+            <Grid item xs={1} lg={1} md={1} sx={{paddingTop: "3rem"}}>
             </Grid>
-            <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
-                Django
+            <Grid item xs={11} lg={11} md={11}> 
+              <Grid container >
+                <Grid item xs={3} lg={3} md={3}  >
+                <input type="checkbox" style={{marginLeft:"4vw",marginTop:"3rem"}} className="cont" value={2} onChange={handle}/>
+                <span></span>
+                </Grid>
+                <Grid item xs={9} lg={9} md={9}>
+                <Typography align="left" sx={{ paddingLeft: "2.6rem", paddingTop: "1rem" }}>
+                  Django
               </Typography>
-              <TextField
+                <TextField
                 sx={{ marginTop: "0vh", paddingTop: "0vh" }}
                 className="input"
                 id="input-with-icon-textfield"
@@ -240,14 +251,20 @@ function Apply() {
                 onChange={(e) => setR2(e.target.value)}
 
               />
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <input type="checkbox" className="cont" value={3} onChange={handle}/>
-              <span></span>
+            <Grid item xs={1} lg={1} md={1} sx={{paddingTop: "3rem"}}>
             </Grid>
-            <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
-                Node
+            <Grid item xs={11} lg={11} md={11}> 
+              <Grid container >
+                <Grid item xs={3} lg={3} md={3}  >
+                <input type="checkbox" style={{marginLeft:"4vw",marginTop:"3rem"}} className="cont" value={3} onChange={handle}/>
+                <span></span>
+                </Grid>
+                <Grid item xs={9} lg={9} md={9}>
+                <Typography align="left" sx={{ paddingLeft: "2.6rem", paddingTop: "1rem" }}>
+                  Node
               </Typography>
               <TextField
                 sx={{ marginTop: "0vh", paddingTop: "0vh" }}
@@ -267,14 +284,20 @@ function Apply() {
                 onChange={(e) => setR3(e.target.value)}
 
               />
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <input type="checkbox" className="cont" value={4} onChange={handle}/>
-              <span></span>
+            <Grid item xs={1} lg={1} md={1} sx={{paddingTop: "3rem"}}>
             </Grid>
-            <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", paddingTop: "1rem", fontSize: "1rem" }}>
-                React Native
+            <Grid item xs={11} lg={11} md={11}> 
+              <Grid container >
+                <Grid item xs={3} lg={3} md={3}  >
+                <input type="checkbox" style={{marginLeft:"4vw",marginTop:"3rem"}} className="cont" value={4} onChange={handle}/>
+                <span></span>
+                </Grid>
+                <Grid item xs={9} lg={9} md={9}>
+                <Typography align="left" sx={{ paddingLeft: "2.6rem", paddingTop: "1rem" }}>
+                  React Native
               </Typography>
               <TextField
                 sx={{ marginTop: "0vh", paddingTop: "0vh" }}
@@ -294,13 +317,19 @@ function Apply() {
                 onChange={(e) => setR4(e.target.value)}
 
               />
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <input type="checkbox" className="cont" value={5} onChange={handle}/>
-              <span></span>
+            <Grid item xs={1} lg={1} md={1} sx={{paddingTop: "3rem"}}>
             </Grid>
-            <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", fontSize: "1rem" }}>
+            <Grid item xs={11} lg={11} md={11}> 
+              <Grid container >
+                <Grid item xs={3} lg={3} md={3}  >
+                <input type="checkbox" style={{marginLeft:"4vw",marginTop:"3rem"}} className="cont" value={5} onChange={handle}/>
+                <span></span>
+                </Grid>
+                <Grid item xs={9} lg={9} md={9}>
+                <Typography align="left" sx={{ paddingLeft: "2.6rem", paddingTop: "1rem" }}>
                 Fullstack Node
               </Typography>
               <TextField
@@ -321,13 +350,19 @@ function Apply() {
                 onChange={(e) => setR5(e.target.value)}
 
               />
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-              <input type="checkbox" className="cont" value={6} onChange={handle} />
-              <span></span>
+            <Grid item xs={1} lg={1} md={1} sx={{paddingTop: "3rem"}}>
             </Grid>
-            <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", fontSize: "1rem" }}>
+            <Grid item xs={11} lg={11} md={11}> 
+              <Grid container >
+                <Grid item xs={3} lg={3} md={3}  >
+                <input type="checkbox" style={{marginLeft:"4vw",marginTop:"3rem"}} className="cont" value={6} onChange={handle}/>
+                <span></span>
+                </Grid>
+                <Grid item xs={9} lg={9} md={9}>
+                <Typography align="left" sx={{ paddingLeft: "2.6rem", paddingTop: "1rem" }}>
                 Flutter
               </Typography>
               <TextField
@@ -347,14 +382,19 @@ function Apply() {
                 value={r6}
                 onChange={(e) => setR6(e.target.value)}
               />
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={2} lg={4} md={4} sx={{ paddingTop: "2rem" }}>
-
-              <input type="checkbox" className="cont" value={7} onChange={handle}/>
-              <span></span>    
+            <Grid item xs={1} lg={1} md={1} sx={{paddingTop: "3rem"}}>
             </Grid>
-            <Grid item xs={10} lg={8} md={8}>
-              <Typography align="left" sx={{ paddingLeft: "2.7rem", fontSize: "1rem" }}>
+            <Grid item xs={11} lg={11} md={11}> 
+              <Grid container >
+                <Grid item xs={3} lg={3} md={3}  >
+                <input type="checkbox" style={{marginLeft:"4vw",marginTop:"3rem"}} className="cont" value={7} onChange={handle}/>
+                <span></span>
+                </Grid>
+                <Grid item xs={9} lg={9} md={9}>
+                <Typography align="left" sx={{ paddingLeft: "2.6rem", paddingTop: "1rem" }}>
                 Fullstack Django
               </Typography>
               <TextField
@@ -375,10 +415,15 @@ function Apply() {
                 onChange={(e) => setR7(e.target.value)}
 
               />
+                </Grid>
+              </Grid>
             </Grid>
+            
+            
           </Grid>
           <div>
             <Button sx={{
+              width:"10rem",
               borderRadius: "6px", border: " solid 3px white", marginTop: "3vh", boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor: "#5154CE", color: "white",
               "&:hover": {
                 color: 'white',

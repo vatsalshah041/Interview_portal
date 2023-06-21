@@ -64,9 +64,9 @@ function BroadDrawer() {
       </Toolbar>
       </Box>
       <Divider />
-      <Paper  className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mt:"20px",mb:"20px"}}>
-        <List>
-        <ListItem button onClick={() => navigate("/profile")}>
+      <Paper  className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mt:"20px",mb:"18px"}}>
+        <List >
+        <ListItem button onClick={() => navigate("/profile")} >
           <ListItemIcon>
           <PersonIcon sx={{color:"#7B5BBC"}} />
           </ListItemIcon>
@@ -75,7 +75,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mb:"18px"}}>
       <List>
         <ListItem button onClick={() => navigate("/faq")}>
           <ListItemIcon>
@@ -89,7 +89,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mb:"18px"}}>
       <List>
         <ListItem button onClick={() => navigate("/dashboard")}>
           <ListItemIcon>
@@ -100,7 +100,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mb:"18px"}}>
       <List>
         <ListItem button onClick={() => navigate("/login")}>
           <ListItemIcon>
@@ -111,7 +111,7 @@ function BroadDrawer() {
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mb:"18px"}}>
       <List>
         <ListItem button onClick={() => navigate("/resources")}>
           <ListItemIcon>

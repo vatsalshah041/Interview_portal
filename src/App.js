@@ -11,6 +11,7 @@ import AdminPanel from "./pages/AdminPanel";
 import FaqPage from "./pages/FaqPage";
 import ScorePage from "./pages/ScorePage";
 import Scorecard from "./components/Scorecard";
+
 function App() {
   const PrivateRoute = () => {
     const token = localStorage.getItem("token");
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
+
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/" element={<LoginSignup />} />

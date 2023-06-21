@@ -3,9 +3,16 @@ import Dashboard from './Dashboard'
 import SideNavbar from '../components/SideNavbar'
 function DashboardPage() {
     return (
+        <>
+        {/* <Navbarr/> */}
         <SideNavbar>
-            <Dashboard />
+           <Dashboard /> 
         </SideNavbar>
+           
+           
+        </>
+        
+       
     )
 }
 
