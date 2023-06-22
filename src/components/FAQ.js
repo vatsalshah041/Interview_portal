@@ -11,7 +11,9 @@ import ExpandIcon from "../images/3.png"
 
 const config = {
   animate: true,
-  expandIcon:"+",
+  arrowIcon: "V",
+  openOnload: 0,
+  expandIcon: "+",
   collapseIcon: "-",
 };
 
@@ -58,6 +60,11 @@ const styles = {
   titleTextColor: "#4F3A7B",
   rowTitleColor: "#684CA3",
   rowContentTextSize: '16px',
+  rowContentColor:"#4F3A7B" ,
+  collapseIconIconColor:"#4F3A7B",
+  arrowColor: "#4F3A7B",
+  rowContentAlign:"left"
+
   //rowContentColor: '#684CA3',
 };
 
@@ -75,7 +82,7 @@ export default function FAQ() {
             <Typography sx={{fontWeight:"bold", paddingTop:"5vh",color:"#4F3A7B",fontSize:"2.5rem"}}>
               FAQs
             </Typography>
-            <Typography sx={{color:"#4F3A7B",fontSize:"1rem"}}>
+            <Typography sx={{color:"#4F3A7B",fontSize:"1.5rem"}}>
               Need Answers? Find them here...
             </Typography>
           </Box>

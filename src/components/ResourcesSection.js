@@ -24,7 +24,9 @@ const useStyles = makeStyles(() => ({
     width: "100%",
   },
   header: {
+    fontSize:"2.4rem",
     display: "flex",
+    color:"#4F3A7B",
   },
   text: {
     fontSize: "14px!important",
@@ -81,7 +83,7 @@ export default function Resources() {
     <Card className={classes.card1}>
       <Grid container className={classes.flexItem}>
         <Grid item>
-          <Typography className={classes.header} variant="h3">
+          <Typography className={classes.header} variant="h2" >
             Resources
           </Typography>
           <Divider className={classes.divider} />
@@ -100,6 +102,7 @@ export default function Resources() {
             <Grid item>
               <AppBar position="static" color="inherit" sx={{ width: "100%" }}>
                 <Tabs
+                  sx={{width:"65vw"}}
                   value={value}
                   onChange={handleChange}
                   aria-label="basic tabs example"
@@ -114,7 +117,7 @@ export default function Resources() {
               </AppBar>
             </Grid>
           </Box>
-          <TabPanel value={value} index={0}>
+          <TabPanel value={value} index={0} >
             <ResourcesData stack="Frontend" />
           </TabPanel>
           <TabPanel value={value} index={1}>

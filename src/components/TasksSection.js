@@ -14,21 +14,22 @@ const useStyles = makeStyles((theme) => ({
   flexItem: {
     fontColor:"#4F3A7B !important",
     display: "flex",
-    alignItems: "center",
+   alignItems: "center",
     justifyContent: "space-around",
   },
   card1: {
-    
+    marginLeft:"1.8rem",
     marginRight:"4vw",
-    marginTop:"2vh !important",
-    padding: "6%",
+    height:"32vh",
     borderRadius: "10px!important",
   },
   divider: {
     width: "100%",
   },
   header: {
-    fontColor:"#4F3A7B !important",
+    paddingLeft:"1.15rem",
+    color:"#4F3A7B",
+    fontFamily:"Poppins",
     display: "flex",
     //   justifyContent: "flex-start",
   },
@@ -85,27 +86,15 @@ export default function BasicTabs() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card1}>
-      <Grid item xs="5" md="6">
-        <Typography className={classes.header} variant="h3">
-          <strong>Tasks</strong>
-        </Typography>
-      </Grid>
-      <Divider className={classes.divider} />
-
-      <Box
-        sx={{
-          flexGrow: 1,
-          maxWidth: { xs: 320, sm: 480, md: "100%" },
-          bgcolor: "background.paper",
-          padding: "1px",
-          width: "100%",
-        }}
-      >
-        {/* <Box sx={{ mt: 3 }} className={classes.flexItem}> */}
-        <Grid item sx={{ mt: 3, ml: "5%", mr: "5%" }} md="12">
-          <AppBar position="static" color="inherit" sx={{ width: "100%" }}>
+    <>
+   
+    <Typography className={classes.header} variant="h3" sx={{paddingBottom:"0.5rem",paddingLeft:"2.2rem"}}>
+    <strong>Tasks</strong>
+    </Typography>
+    <Card className={classes.card1}>        
+          <AppBar position="static" color="inherit" sx={{ width: "100vw",borderRadius:"6px !important"}}>
             <Tabs
+              sx={{width:"100vw"}}
               variant="scrollable"
               allowScrollButtonsMobile
               value={value}
@@ -121,8 +110,6 @@ export default function BasicTabs() {
               <Tab label="Design" {...a11yProps(5)} />
             </Tabs>
           </AppBar>
-        </Grid>
-        {/* </Box> */}
         <Grid sx={{ padding: { xs: 2, md: 0 } }}>
           <TabPanel value={value} index={0}>
             <TaskData stack={1}/>
@@ -139,13 +126,8 @@ export default function BasicTabs() {
           <TabPanel value={value} index={4}>
           <TaskData stack={7}/>
           </TabPanel>
-          {/* Design (Bacha hai) */}
-          {/* <TabPanel value={value} index={5}>
-          <TaskData stack={7}/>
-          </TabPanel> */}
         </Grid>
-      </Box>
-      {/* </Grid> */}
     </Card>
+    </>
   );
 }

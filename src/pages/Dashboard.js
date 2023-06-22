@@ -12,6 +12,7 @@ import Apply from "../components/Apply";
 import "../styles/DashboardComponents.css";
 import { Card, Divider, Typography, Button } from "@mui/material";
 import timeline from "../images/timeline.png";
+import hey from "../images/image4.png";
 
 const useStyles = makeStyles((theme) => ({
   flexItem: {
@@ -21,7 +22,16 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "30px!important",
       marginBottom: "2vh",
     },
+    dividerColor: {
+      marginTop:0,
+      backgroundColor: 'gray',
+    },
   },
+  dividerColor: {
+    marginTop:0,
+    backgroundColor: 'gray',
+  },
+
 }));
 
 const Dashboard = () => {
@@ -29,10 +39,12 @@ const Dashboard = () => {
 
   return (
     <>
+    <div id="cover-dashboard-div">
       <Grid
         container
+        
         columnSpacing={1}
-        id="cover-dashboard-div"
+       
         className={classes.flexItem}
         sx={{ paddingTop: "7vh", marginLeft: "1.5vw !important" }}
       >
@@ -59,26 +71,22 @@ const Dashboard = () => {
         <Grid
           item
           spacing={1}
+          
           xs={12}
           md={3}
           lg={4}
           sx={{
+            borderRadius:"10px",
             marginBottom: "2vh !important",
             borderRadius: "8px",
             boxShadow: "rgba(0, 0, 0, 0.24) 0px 2px 8px 0px",
             backgroundColor: "white",
           }}
         >
-          <Typography
-            gutterBottom
-            sx={{ fontSize: "1.35em", textAlign: "left" }}
-            component="div"
-            mt={1}
-            mb={1}
-          >
-            <strong>Timeline</strong>
+          <Typography sx={{textAlign:"left",fontSize:"1.3em",paddingLeft:"1vw",paddingTop:"2.1vh",paddingBottom:"1vh"}}>
+            <strong>Timeline</strong> 
           </Typography>
-          <Divider orientation="horizontal" />
+          <Divider className={classes.dividerColor} variant="middle" />
           <img src={timeline} className="timeline-img" />
         </Grid>
         <Grid item spacing={3} xs={12} md={3} lg={3}>
@@ -101,10 +109,11 @@ const Dashboard = () => {
             <NoOfApp />
           </Grid>
         </Grid>
-        <Grid item xs={12} lg={12} md={12} sx={{ margin: "2vh !important" }}>
+        <Grid item xs={12} lg={12} md={12} sx={{ margin: "2vh !important" }} >
           <TabPanel />
         </Grid>
       </Grid>
+      </div>
     </>
   );
 };
