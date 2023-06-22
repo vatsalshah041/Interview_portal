@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   flexItem: {
     paddingTop:"1vh",
-    paddingLeft:"2vh",
+    
     display: "flex",
     justifyContent: "left",
     alignItems: "left",
@@ -19,11 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
   [theme.breakpoints.up("md")]: {
     card1: {
-      height: "35vh",
+      width:"22vw",
+      height: "37vh",
     },
   },
-  divider: {
-    width: "100%",
+  dividerColor: {
+    marginTop:0,
+    backgroundColor: 'gray',
   },
   header: {
     alignItems:"left",
@@ -31,7 +33,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-start",
   },
   text: {
-    fontSize: "14px!important",
+    paddingTop:"0.3vh",
+    paddingLeft:"0.2vw",
+    fontSize: "16px!important",
   },
 }));
 
@@ -39,15 +43,16 @@ const InterviewScheduleCard = () => {
   const classes = useStyles();
   return (
     <Card className={classes.card1}>
-      <Grid container item className={classes.flexItem} rowSpacing="20">
+      <Grid container item className={classes.flexItem} rowSpacing="8">
         <Grid item>
-          <Typography sx={{textAlign:"left",ml:0,fontSize:"1.3em"}}>
-            <strong>Interview</strong>
+          <Typography sx={{textAlign:"left",fontSize:"1.3em",paddingLeft:"1vw",paddingTop:"2.1vh"}}>
+            <strong>Interview</strong> 
           </Typography>
         </Grid>
-        <Grid item xs={12}>
-          <Divider className={classes.divider} />
-        </Grid>
+        <Grid item xs={12} lg={12}>
+            <Divider className={classes.dividerColor} variant="middle" />
+           </Grid>
+        
         <Grid item xs={12}>
           <Typography className={classes.text}>
             Not yet scheduled will notify you when it is scheduled

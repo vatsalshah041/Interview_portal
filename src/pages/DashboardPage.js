@@ -6,10 +6,10 @@ function DashboardPage() {
         <>
         {/* <Navbarr/> */}
         <SideNavbar>
-           <Dashboard /> 
+        <Dashboard /> 
         </SideNavbar>
            
-           
+        
         </>
         
        
