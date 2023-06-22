@@ -11,13 +11,35 @@
 .MuiButton-containedSecondary {
   background-color: #09c1d7 !important;
 }
+.input {
+  border: none;
+  background-color: #fafafa !important;
+  border-radius: 12px;
+  box-shadow: 0.2px 0.2px 3px #eeecec ,
+  inset -3px -3px 7px #fafafa,
+  inset 3px 3px 7px rgba(199, 206, 219, 0.945);    
+
+  width:82%;
+
+
+ }
+ .input:focus {
+  outline-color: #e8e8e8;
+
+  color: #595959;
+
+  box-shadow: inset 1px 1px 2px #BABECC,
+         inset -1px -1px 2px #ffffff73;
+ 
+
+ }
 .class1{
 
     
     background-size: cover;
     
     /* background-image: linear-gradient(to bottom right,  white, #D7B4F3); */
-    background-image: linear-gradient(190deg, white 50%, #7B5BBC 100%);
+     background-image: linear-gradient(  to bottom right,#FFFFFF 25% , #DAE4FF , #EFE7FF  ,#D3C3FF );
 
 
 }

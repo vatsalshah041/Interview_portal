@@ -163,7 +163,8 @@ function Apply() {
                 Resume Link
               </Typography>
               <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem" }}
+               
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem",paddingLeft:"1rem"  }}
                 className="input"
                 id="input-with-icon-textfield"
                 InputProps={{
@@ -200,7 +201,7 @@ function Apply() {
                   Frontend
               </Typography>
                 <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem"}}
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem",paddingLeft:"1rem" }}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled
@@ -233,7 +234,7 @@ function Apply() {
                   Django
               </Typography>
                 <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem" }}
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem" ,paddingLeft:"1rem" }}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled
@@ -267,7 +268,7 @@ function Apply() {
                   Node
               </Typography>
               <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem" }}
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem",paddingLeft:"1rem"  }}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled
@@ -300,7 +301,7 @@ function Apply() {
                   React Native
               </Typography>
               <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem" }}
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem",paddingLeft:"1rem"  }}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled
@@ -333,7 +334,7 @@ function Apply() {
                 Fullstack Node
               </Typography>
               <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem" }}
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem",paddingLeft:"1rem"  }}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled
@@ -366,7 +367,7 @@ function Apply() {
                 Flutter
               </Typography>
               <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem" }}
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem",paddingLeft:"1rem"  }}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled
@@ -398,7 +399,7 @@ function Apply() {
                 Fullstack Django
               </Typography>
               <TextField
-                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem" }}
+                sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"1.6rem",paddingLeft:"1rem"  }}
                 className="input"
                 id="input-with-icon-textfield"
                 disabled

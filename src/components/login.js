@@ -95,7 +95,8 @@ const Login = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.username}
-          variant="outlined"
+     
+          variant="standard"
           className="smallfield"
           InputProps={{
             startAdornment: <InputAdornment position="start"><PersonIcon></PersonIcon></InputAdornment>,
@@ -104,8 +105,10 @@ const Login = () => {
 
         <div className="userPass">Password</div>
         <TextField
-          variant="outlined"
-          className="smallfield"
+          variant="standard"
+
+
+         className="smallfield"
           id="password"
           helperText={
             formik.touched.password && formik.errors.password
@@ -121,15 +124,17 @@ const Login = () => {
             startAdornment: <InputAdornment position="start"><KeyIcon></KeyIcon></InputAdornment>,
           }}
         />
-
-        <div className="dhaaText">
-          <div className="dhaaText1">Don't have an account?</div>
-          <div>
-            <Link to="/signup" className="dhaaText2">
-              Sign Up
+         {/* <TextField id="outlined-basic" label="Password" variant="outlined" 
+         InputProps={{
+          startAdornment: <InputAdornment position="start"><KeyIcon></KeyIcon></InputAdornment>,
+        }}/> */}
+         <div className="dhaaText1">Don't have an account?
+            <Link to="/signup" 
+            className="dhaaText2"
+            >
+               <span style={{marginLeft:5,color:"#8985F2",fontSize:"16px",textDecoration:"none !important"}}>Sign Up</span>
             </Link>
           </div>
-        </div>
         <Button
           className="signBttn"
           variant="contained"
