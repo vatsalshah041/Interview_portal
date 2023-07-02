@@ -48,14 +48,14 @@ const TaskData = (props) => {
     axios(config)
       .then(function (response) {
         setData(response.data);
-        console.log(response.data);
+        //console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
   }, []);
-  console.log(props.stack);
-  console.log(data);
+  //console.log(props.stack);
+  //console.log(data);
 
   // useEffect(()=>{
 

@@ -58,7 +58,7 @@ let config = {
 async function makeRequest() {
   try {
     const response = await axios.request(config);
-    console.log((response.data));
+    //console.log((response.data));
     if(((response.data).Number)>=1)
     {
       setAllow(true);
