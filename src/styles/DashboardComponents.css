@@ -1,0 +1,30 @@
+
+ .timeline-img{
+    padding-top:1vh;
+    height: 40vh !important;
+
+}
+#cover-dashboard-div{
+    height:100%;
+    
+    background-image: url("../images/image4.png");
+    background-size: cover; 
+  
+   }
+@media screen and (max-width: 600px) {
+    .timeline-img{
+        padding-top:3vh;
+        height: 40vh !important;
+    }
+    .nav-rem{
+        display:none;
+        display:hidden;
+    }
+    #cover-dashboard-div{
+        height:100%;
+        
+        background-image: url("../images/image4.png");
+        background-size: cover; 
+       }
+    
+}

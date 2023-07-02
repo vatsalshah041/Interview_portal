@@ -21,6 +21,18 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     color: theme.palette.error.main,
   },
+  components: {
+    MuiOutlinedInput: {
+      defaultProps: {
+        notched: false,
+      },
+    },
+    MuiInputLabel: {
+      defaultProps: {
+       shrink: false,
+      },
+    }
+  },
 }));
 const Signup = () => {
   const classes = useStyles();
@@ -100,7 +112,8 @@ const Signup = () => {
         <div className="loginHeader">SIGNUP</div>
         <div className="userPass" style={{marginTop:"10"}}>Email</div>
         <TextField
-          variant="outlined"
+          //InputLabelProps={{shrink: false}} 
+          variant="standard"
           id="email"
           name="email"
           type="email"
@@ -124,7 +137,7 @@ const Signup = () => {
 
         <div className="userPass"> Username</div>
         <TextField
-          variant="outlined"
+          variant="standard"
           id="username"
           name="username"
           helperText={
@@ -149,7 +162,7 @@ const Signup = () => {
 
         <div className="userPass"> SAP ID</div>
         <TextField
-          variant="outlined"
+          variant="standard"
           id="sapid"
           type="sapid"
           name="sapid"
@@ -173,7 +186,7 @@ const Signup = () => {
 
         <div className="userPass"> Graduation Year</div>
         <TextField
-          variant="outlined"
+          variant="standard"
           id="grad_year"
           name="grad_year"
           helperText={
@@ -196,7 +209,8 @@ const Signup = () => {
 
         <div className="userPass">Password</div>
         <TextField
-          variant="outlined"
+          label={null}
+          variant="standard"
           id="setPassword"
           name="setPassword"
           helperText={
@@ -216,10 +230,12 @@ const Signup = () => {
             ),
           }}
         />
+        
 
         <div className="userPass"> Confirm Password</div>
         <TextField
-          variant="outlined"
+
+          variant="standard"
           id="confirmPassword"
           name="confirmPassword"
           helperText={
@@ -239,19 +255,22 @@ const Signup = () => {
             ),
           }}
         />
-        <div className="dhaaText">
-          <div className="dhaaText0">Sign Up with </div>
-          <img src="https://img.icons8.com/color/48/null/google-logo.png" style={{height:27}}/> <img src="https://img.icons8.com/ios-filled/50/null/github.png"  style={{height:27,marginLeft:5}}/>
+        <div className="dhaaText" style={{paddingTop:"1rem",paddingBottom:"1rem",}}>
+          <div className="dhaaText0">Sign Up with 
+          <img src="https://img.icons8.com/color/48/null/google-logo.png" style={{height:27,paddingLeft:"0.5rem"}}/> <img src="https://img.icons8.com/ios-filled/50/null/github.png"  style={{height:27,marginLeft:5}}/>
+          </div>
           <div className="dhaaText1">Already have an account?
-            <Link to="/login" className="dhaaText2">
-               <span style={{marginLeft:5}}>Login</span>
+            <Link to="/login" 
+            className="dhaaText2"
+            >
+               <span style={{marginLeft:5,color:"#8985F2",fontSize:"16px",textDecoration:"none !important"}}>Login</span>
             </Link>
           </div>
         </div>
         
         <Button
           variant="contained"
-          className="signBttn"
+         // className="signBttn"
           onClick={formik.handleSubmit}
           sx={{backgroundColor:"#5154CE",
           }}

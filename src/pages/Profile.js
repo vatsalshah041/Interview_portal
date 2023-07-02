@@ -149,11 +149,11 @@ export default function Profile() {
         <>
           <div className="class1" style={{ paddingBottom: "55px" }}>
             <SideNavbar>
-              <Typography
+            <Typography
                 className="heading_profile"
                 sx={{
                   paddingTop: "40px",
-                  fontSize: "40px",
+                  fontSize: "5rem",
                   fontWeight: "bold",
                   color: " #5154CECC",
                   textAlign: "center",
@@ -164,29 +164,30 @@ export default function Profile() {
               </Typography>
 
               <Container maxWidth="sm">
-                <Grid container>
+              <Grid container>
                   <Grid item ml={0} lg={3} xs={3}>
-                    <Typography sx={{ textAlign: "left" }}>Name:</Typography>
+                    <Typography sx={{ textAlign: "left",paddingLeft:"1rem",fontSize:"17px" }}>Name</Typography>
                   </Grid>
-                </Grid>
+              </Grid>
                 <Grid container my={1}>
                   <Grid item lg={12} xs={12} md={12}>
                     <TextField
+                      placeholder="firstname lastname"
                       fullWidth
                       // value={edit ? info.name : user.user.name}
                       value={info.name}
                       onChange={(e) => setInfo(prev => ({ ...prev, name: e.target.value }))}
                       disabled={edit}
                       InputProps={{ disabled: edit }}
-                      sx={{
-                        borderColor: "none",
-                        [`& fieldset`]: {
-                          borderRadius: 30,
-                          borderColor: "none",
-                          boxShadow:
-                            "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important",
-                        },
+                      sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem",paddingLeft:"1rem" }}
+                      className="input"
+                      id="input-with-icon-textfield"
+                      InputProps={{
+                      disableUnderline: true,
                       }}
+                      type={"text"}
+                      variant="standard" 
+                      autoComplete="off"
                     />
 
                   </Grid>
@@ -194,56 +195,57 @@ export default function Profile() {
 
                 <Grid container sx={{ marginTop: "20px" }}>
                   <Grid item xs={12} lg={5} md={6}>
-                    <Typography sx={{ textAlign: "left" }}>Sapid</Typography>
+                  <Typography sx={{ textAlign: "left",paddingLeft:"1rem",fontSize:"17px" }}>Sapid</Typography>
                     <TextField
-                      my={1}
+                      placeholder="6000xxxxxxx"
+                      className="input"
                       fullWidth
                       disabled
-                      // InputProps={{ disabled: edit }}
+                      //InputProps={{ disabled: edit }}
                       value={user.user.sapid}
-                   
-                      sx={{
-                        marginTop: "10px",
-                        borderColor: "none",
-                        [`& fieldset`]: {
-                          borderRadius: 30,
-                          borderColor: "none",
-                          boxShadow:
-                            "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important",
-                        },
+                      autoComplete="off"
+                      variant="standard"
+                      type={"text"}
+                     
+                      className="input"
+                      id="input-with-icon-textfield"
+                      InputProps={{
+                      disableUnderline: true,
                       }}
+                      autoComplete="off"
+                      sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem" ,paddingLeft:"1rem"}}
                     ></TextField>
+
                   </Grid>
                   <Grid item lg={1} md={1}></Grid>
                   <Grid item xs={12} lg={6} md={6}>
-                    <Typography sx={{ textAlign: "left" }}>
+                  <Typography sx={{ textAlign: "left" ,paddingLeft:"1rem",fontSize:"17px"}}>
                       Graduation Year
                     </Typography>
                     <TextField
                       fullWidth
+                      placeholder="2025"
                       // value={user.user.grad_year}
                       value={info.grad_year}
                       onChange={(e) => setInfo(prev => ({ ...prev, grad_year: e.target.value }))}
                       disabled
                       InputProps={{ disabled: edit }}
                       // value={user.sapid}
-                      sx={{
-                        marginTop: "10px",
-                        borderColor: "none",
-                        [`& fieldset`]: {
-                          borderRadius: 30,
-                          borderColor: "none",
-                          boxShadow:
-                            "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important",
-                        },
-                        backgroundColor: "white",
+                      className="input"
+                      id="input-with-icon-textfield"
+                      InputProps={{
+                      disableUnderline: true,
                       }}
+                      type={"text"}
+                      variant="standard"
+                      autoComplete="off"
+                      sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem",paddingLeft:"1rem" }}
                     ></TextField>
                   </Grid>
                 </Grid>
                 <Grid container>
                   <Grid item ml={0} lg={3} xs={3} my={1}>
-                    <Typography sx={{ textAlign: "left", marginTop: "10px" }}>
+                  <Typography sx={{ textAlign: "left", marginTop: "10px",paddingLeft:"1rem",fontSize:"17px" }}>
                       Email
                     </Typography>
                   </Grid>
@@ -251,50 +253,49 @@ export default function Profile() {
                 <Grid container>
                   <Grid item lg={12} xs={12} md={12}>
                     <TextField
+                      placeholder="name@gmail.com"
                       fullWidth
                       // value={user.user.email}
                       value={info.email}
+                      sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem",paddingLeft:"1rem", }}
                       onChange={(e) => setInfo(prev => ({ ...prev, email: e.target.value }))}
                       //onChange={(e) => setUser({ ...user, name: e.target.value })}
                       disabled
                       InputProps={{ disabled: edit }}
-                      sx={{
-                        borderColor: "none",
-                        [`& fieldset`]: {
-                          borderRadius: 30,
-                          borderColor: "none",
-
-                          boxShadow:
-                            "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset !important",
-                        },
-                        backgroundColor: "white",
+                      className="input"
+                      id="input-with-icon-textfield"
+                      InputProps={{
+                      disableUnderline: true,
                       }}
+                      autoComplete="off"
+                      type={"text"}
+                      variant="standard"
                     ></TextField>
                   </Grid>
                 </Grid>
 
                 <Grid container>
                   <Grid item xs={12} my={2}>
-                    <Typography sx={{ textAlign: "left" }}>
+                    <Typography sx={{ textAlign: "left",paddingLeft:"1rem",fontSize:"17px"  }}>
                       Resume Link
                     </Typography>
                     <TextField
+                      placeholder="example.com"
+                      className="input"
+                      id="input-with-icon-textfield"
                       // value={user1.resume_link}
                       value={info.resume_link}
                       onChange={(e) => setInfo(prev => ({ ...prev, resume_link: e.target.value }))}
                       disabled
                       InputProps={{ disabled: edit }}
-                      sx={{
-                        marginTop: "10px",
-                        borderColor: "none",
-                        [`& fieldset`]: {
-                          borderRadius: 30,
-                          boxShadow:
-                            "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset",
-                        },
-                        backgroundColor: "white",
-                      }}
+                      sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem" ,paddingLeft:"1rem",}}
                       fullWidth
+                      InputProps={{
+                        disableUnderline: true,
+                        }}
+                        autoComplete="off"
+                        type={"text"}
+                        variant="standard"  
                     />
                   </Grid>
                 </Grid>
@@ -302,27 +303,28 @@ export default function Profile() {
                 {!profile ? (
                   <>
                     <Grid my={1}>
-                      <Typography
+                    <Typography
                         fullWidth
-                        sx={{ textAlign: "left", marginBottom: "5px" }}
+                        sx={{ textAlign: "left", marginBottom: "5px",paddingLeft:"1rem",fontSize:"17px"  }}
                       >
                         Password
                       </Typography>
                       <Grid item xs={12}>
                         <TextField
+                          placeholder="Enter Password"
                           disabled
+                          className="input"
+                          id="input-with-icon-textfield"
+                          InputProps={{
+                          disableUnderline: true,
+                          }}
+                          autoComplete="off"
                           InputProps={{ disabled: edit }}
                           value={pass}
-                          sx={{
-                            borderColor: "none",
-                            [`& fieldset`]: {
-                              borderRadius: 30,
-                              boxShadow:
-                                "rgb(198,198,198) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset",
-                            },
-                            backgroundColor: "white",
-                          }}
+                          sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem" ,paddingLeft:"1rem" }}
                           onChange={(e) => setPass(e.target.value)}
+                          type={"text"}
+                           variant="standard"  
                           // label="Password"
                           fullWidth
                         />
@@ -333,26 +335,27 @@ export default function Profile() {
                 ) : null}
 
                 <Grid container>
-                  <Typography sx={{ marginTop: "25px" }}>
+                <Typography sx={{ marginTop: "25px" ,paddingLeft:"1rem",fontSize:"17px"  }}>
                     Stacks Applied
                   </Typography>
                   <Grid item xs={12} lg={12}>
                     {user1.stack.map((item, index) => (
                       <Button
-                        sx={{
-                          border: " solid 3px white",
-                          boxShadow: "0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-                          backgroundColor: "#6B6EDF",
+                      sx={{
+                       
+                        border: " solid 3px white",
+                        boxShadow: "0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                        backgroundColor: "#6B6EDF",
+                        color: "white",
+                        "&:hover": {
                           color: "white",
-                          "&:hover": {
-                            color: "white",
-                            backgroundColor: "#6B6EDF",
-                          },
-                          marginTop: "30px",
-
-                          borderRadius: 30,
-                          width: "110px",
-                        }}
+                          backgroundColor: "#6B6EDF",
+                        },
+                        marginTop: "10px",
+                        marginRight:"0.4rem",
+                        borderRadius: 30,
+                        width: "110px",
+                      }}
                         key={index}
                         label={item.name}
                         onClick={() => {}}
@@ -368,7 +371,7 @@ export default function Profile() {
                 <Grid container spacing={2} sx={{ marginTop: "25px" }}>
                   <Grid item xs={6}>
                     <Button
-                      size="large"
+                      //size="large"
                       variant="contained"
                       sx={{
                         border: " solid 3px white",
@@ -385,12 +388,12 @@ export default function Profile() {
                       //onClick={() => setProfile(false)}
                       onClick={change}
                     >
-                      Edit
+                      Edit Profile
                     </Button>
                   </Grid>
                   <Grid item xs={6}>
                     <Button
-                      size="large"
+                      //size="large"
                       variant="contained"
                       sx={{
                         border: " solid 3px white",
@@ -406,7 +409,7 @@ export default function Profile() {
                       // sx={{ textTransform: "none", padding: "4% 10%" }}
                       onClick={handleSave}
                     >
-                      Save
+                      Save Profile
                     </Button>
                   </Grid>
                 </Grid>

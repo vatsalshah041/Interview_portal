@@ -4,67 +4,118 @@ import InterviewScheduleCard from "../components/InterviewScheduleCard";
 import ApplyCard from "../components/ApplyCard";
 import { makeStyles } from "@mui/styles";
 import { Grid } from "@mui/material";
-import TimeLine from "../components/Timeline";
 import TabPanel from "../components/TasksSection";
 import NoOfApp from "../components/NoOfApp";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import  Apply from "../components/Apply";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Apply from "../components/Apply";
+import "../styles/DashboardComponents.css";
+import { Card, Divider, Typography, Button } from "@mui/material";
+import timeline from "../images/timeline.png";
+import hey from "../images/image4.png";
 
 const useStyles = makeStyles((theme) => ({
-	flexItem: {
-		display: "flex",
-		height: "90%",
-		backgroundColor: "#F2F3F7",
-		justifyContent: "space-around",
-		[theme.breakpoints.down("md")]: {
-			marginLeft: "30px!important",
-		},
-	},
+  flexItem: {
+    display: "flex",
+    justifyContent: "space-around",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "30px!important",
+      marginBottom: "2vh",
+    },
+    dividerColor: {
+      marginTop:0,
+      backgroundColor: 'gray',
+    },
+  },
+  dividerColor: {
+    marginTop:0,
+    backgroundColor: 'gray',
+  },
+
 }));
 
 const Dashboard = () => {
-	// const query = new URLSearchParams(window.location.search);
-	// const myParam = query.get("success");
+  const classes = useStyles();
 
-	// if(myParam === 'true'){
-	// toast.success('Registered Successfully');
-	// } 
-	const classes = useStyles();
-
-	return (
-		<>
-		  <Grid container columnSpacing={4} className={classes.flexItem}>
-		    <Grid item md={4} xs={12} lg={4}>
-		      <Grid item xs={10} lg={12} md={12} mt={3} ml={7} mb={2}>
-		        <ProfileProgress />
-		      </Grid>
-		      <Grid item xs={10} lg={12} md={12} mt={5} mb={0} ml={7} >
-		        <InterviewScheduleCard />
-		      </Grid>
-		    </Grid>
-		    <Grid item md={4} xs={12}>
-		      <Grid item xs={10} md={12} mt={3} lg={12}>
-		        <TimeLine />
-		      </Grid>
-		    </Grid>
-			<Grid item md={4} xs={12} lg={4}>
-		      <Grid item xs={10} lg={12} md={12} mt={3}>
-		        <ApplyCard />
-		      </Grid>
-		      <Grid item xs={10} lg={12} md={12} mt={7}>
-		        <NoOfApp />
-		      </Grid>
-		    </Grid>
-
-		    <Grid item md={11} xs={10} lg={11}>
-		      <Grid item md={12} xs={10} mt={3} lg={12} mb={5}>
-		        <TabPanel />
-		      </Grid>
-		    </Grid>
-		  </Grid>
-		</>
-	);
+  return (
+    <>
+    <div id="cover-dashboard-div">
+      <Grid
+        container
+        
+        columnSpacing={1}
+       
+        className={classes.flexItem}
+        sx={{ paddingTop: "7vh", marginLeft: "1.5vw !important" }}
+      >
+        <Grid item spacing={3} xs={12} md={3} lg={3}>
+          <Grid
+            item
+            xs={12}
+            md={12}
+            lg={12}
+            sx={{ marginBottom: "2vh !important" }}
+          >
+            <ProfileProgress />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={12}
+            lg={12}
+            sx={{ marginBottom: "2vh !important" }}
+          >
+            <InterviewScheduleCard />
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          spacing={1}
+          
+          xs={12}
+          md={3}
+          lg={4}
+          sx={{
+            borderRadius:"10px",
+            marginBottom: "2vh !important",
+            borderRadius: "8px",
+            boxShadow: "rgba(0, 0, 0, 0.24) 0px 2px 8px 0px",
+            backgroundColor: "white",
+          }}
+        >
+          <Typography sx={{textAlign:"left",fontSize:"1.3em",paddingLeft:"1vw",paddingTop:"2.1vh",paddingBottom:"1vh"}}>
+            <strong>Timeline</strong> 
+          </Typography>
+          <Divider className={classes.dividerColor} variant="middle" />
+          <img src={timeline} className="timeline-img" />
+        </Grid>
+        <Grid item spacing={3} xs={12} md={3} lg={3}>
+          <Grid
+            item
+            xs={12}
+            md={12}
+            lg={12}
+            sx={{ marginBottom: "2vh !important" }}
+          >
+            <ApplyCard />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={12}
+            lg={12}
+            sx={{ marginBottom: "2vh !important" }}
+          >
+            <NoOfApp />
+          </Grid>
+        </Grid>
+        <Grid item xs={12} lg={12} md={12} sx={{ margin: "2vh !important" }} >
+          <TabPanel />
+        </Grid>
+      </Grid>
+      </div>
+    </>
+  );
 };
 
 export default Dashboard;

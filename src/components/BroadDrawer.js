@@ -17,9 +17,20 @@ import Paper from '@mui/material/Paper';
 import { Typography } from "@mui/material";
 import { Toolbar } from "@material-ui/core";
 import '../styles/BroadDrawer.css';
+import { makeStyles } from "@mui/styles";
+const useStyles = makeStyles((theme) => ({
+
+  dividerColor: {
+    marginBottom:"0.5rem",
+    marginTop:"0rem",
+    backgroundColor: "#684CA3",
+  },
+
+}));
 
 function BroadDrawer() {
   const navigate = useNavigate();
+  const classes = useStyles();
 
   return (
     <>
@@ -64,62 +75,73 @@ function BroadDrawer() {
       </Toolbar>
       </Box>
       <Divider />
-      <Paper  className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mt:"20px",mb:"20px"}}>
-        <List>
-        <ListItem button onClick={() => navigate("/profile")}>
+      <Paper  className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mt:"20px",mb:"18px"}}>
+        <List >
+        <ListItem button onClick={() => navigate("/profile")} >
           <ListItemIcon>
-          <PersonIcon sx={{color:"#7B5BBC"}} />
+          <PersonIcon sx={{color:"#7B5BBC",fontSize:"1.7rem"}} />
           </ListItemIcon>
-          <ListItemText primary="Profile"/>
+          <Typography sx={{fontSize:"18px"}}>Profile</Typography>
         </ListItem>
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mb:"18px"}}>
       <List>
         <ListItem button onClick={() => navigate("/faq")}>
           <ListItemIcon>
-          <QuizIcon sx={{color:"#7B5BBC"}}/> 
+          <QuizIcon sx={{color:"#7B5BBC",fontSize:"1.7rem"}}/> 
           </ListItemIcon>
-          <ListItemText
-            sx={{ color: "#000", textDecoration: "none!important" }}
-            primary="FAQs"
-          />
+          <Typography sx={{fontSize:"18px"}}>FAQs</Typography>
         </ListItem>
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mb:"18px"}}>
       <List>
         <ListItem button onClick={() => navigate("/dashboard")}>
           <ListItemIcon>
-          <GroupsIcon sx={{color:"#7B5BBC"}}/> 
+          <GroupsIcon sx={{color:"#7B5BBC",fontSize:"1.7rem"}}/> 
           </ListItemIcon>
-          <ListItemText primary="About Us" />
+          <Typography sx={{fontSize:"18px"}}>About Us</Typography>
         </ListItem>
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px",height:"48px",mb:"18px"}}>
       <List>
         <ListItem button onClick={() => navigate("/login")}>
           <ListItemIcon>
-          <LogoutIcon sx={{color:"#7B5BBC"}}/> 
+          <LogoutIcon sx={{color:"#7B5BBC",fontSize:"1.7rem"}}/> 
           </ListItemIcon>
-          <ListItemText primary="Logout" />
+          <Typography sx={{fontSize:"18px"}}>Logout</Typography>
         </ListItem>
       </List>
       </Paper>
 
-      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"20px",height:"55px",mb:"20px"}}>
+      <Paper className="Nav_list_color" elevation={3} sx={{width:"200px",ml:"28px"}}>
       <List>
         <ListItem button onClick={() => navigate("/resources")}>
           <ListItemIcon>
-            <TaskIcon sx={{color:"#7B5BBC"}} />
+            <TaskIcon sx={{color:"#7B5BBC",fontSize:"1.7rem"}} />
           </ListItemIcon>
-          <ListItemText primary="Resources"/>
+          <Typography sx={{fontSize:"18px",color:"#684CA3",fontWeight:"600"}}>Resources</Typography>
+         
         </ListItem>
+        <Divider variant="middle"  className={classes.dividerColor} />
       </List>
+     
+      <Typography sx={{paddingLeft:"3.5rem"}} >
+            <ul >
+              <li style={{paddingRight:"45px",color:"#684CA3",fontSize:"16px"}}>Frontend</li>
+              <li style={{paddingRight:"49px",color:"#684CA3",fontSize:"16px"}}>Backend</li>
+              <li style={{paddingRight:"49px",color:"#684CA3",fontSize:"16px"}}>App Dev</li>
+              <li style={{paddingRight:"65px",color:"#684CA3",fontSize:"16px"}}>Design</li>
+              <li style={{paddingRight:"65px",color:"#684CA3",fontSize:"16px",paddingBottom:"0.7rem"}}>Github</li>
+
+
+            </ul>
+            </Typography>
       </Paper>
       <Divider/>
 

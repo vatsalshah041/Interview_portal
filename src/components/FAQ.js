@@ -4,10 +4,15 @@ import Faq from "react-faq-component";
 import Typography from "@mui/material/Typography";
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import Box from "@mui/material/Typography";
+import ExpandIcon from "../images/3.png"
+
+
 
 
 const config = {
   animate: true,
+  arrowIcon: "V",
+  openOnload: 0,
   expandIcon: "+",
   collapseIcon: "-",
 };
@@ -50,11 +55,16 @@ const data = {
 };
 
 const styles = {
-  boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+  //boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
   boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
   titleTextColor: "#4F3A7B",
   rowTitleColor: "#684CA3",
   rowContentTextSize: '16px',
+  rowContentColor:"#4F3A7B" ,
+  collapseIconIconColor:"#4F3A7B",
+  arrowColor: "#4F3A7B",
+  rowContentAlign:"left"
+
   //rowContentColor: '#684CA3',
 };
 
@@ -72,7 +82,7 @@ export default function FAQ() {
             <Typography sx={{fontWeight:"bold", paddingTop:"5vh",color:"#4F3A7B",fontSize:"2.5rem"}}>
               FAQs
             </Typography>
-            <Typography sx={{color:"#4F3A7B",fontSize:"1rem"}}>
+            <Typography sx={{color:"#4F3A7B",fontSize:"1.5rem"}}>
               Need Answers? Find them here...
             </Typography>
           </Box>

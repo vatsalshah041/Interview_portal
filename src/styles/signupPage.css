@@ -36,6 +36,13 @@
   width: 50%;
   min-height: 100vh;
 }
+.dhaaText2 {
+  
+  font-size: 16px;
+  font-weight: 700;
+  color: #8985F2;
+  text-decoration: none !important;
+}
 
 @media screen and (max-width: 600px) {
   .signUpDiv {

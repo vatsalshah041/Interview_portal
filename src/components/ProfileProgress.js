@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   flexItem: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-around",
+   // justifyContent: "space-around",
   },
 
   text1: {
@@ -25,33 +25,42 @@ const useStyles = makeStyles((theme) => ({
     entireGrid: {
       marginLeft: "-10px!important",
     },
+    card1:{
+      width:"80vw",
+    }
   },
 
   card1: {
-    padding: "1%",
+
     boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)!important",
     borderRadius: "10px!important",
     paddingTop: "6%",
+    paddingLeft: "6%",
+    paddingRight: "6%",
     paddingBottom: "6%",
+    width:"21rem",
   },
 }));
 const ProfileProgress = (props) => {
   console.log(props.value);
   const classes = useStyles();
   return (
-    <Card className={classes.card1}>
-      <Grid container className={classes.entireGrid} spacing={2}>
-        <Grid item xs={2} className={classes.flexItem}>
+    <Grid item xs={12} >
+      <Card className={classes.card1} >
+      <Grid container className={classes.entireGrid} spacing={2} xs={12} >
+        <Grid item xs={2} lg={2} className={classes.flexItem}>
           <ProgressCircle />
         </Grid>
-        <Grid item xs={10}>
-          <Typography>
-            Your profile is still 20% incomplete. <br/> 
-            <Typography sx={{color:"gray"}}>Complete your profile now!</Typography>
+        <Grid item xs={10} lg={10}>
+          <Typography sx={{paddingTop:"0.5rem", fontSize: "16px!important"}}>
+            Your profile is still 20% incomplete
           </Typography>
         </Grid>
       </Grid>
     </Card>
+
+    </Grid>
+    
   );
 };
 
