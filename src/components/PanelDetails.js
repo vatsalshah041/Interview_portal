@@ -149,7 +149,7 @@ export default function PanelDetails(props) {
     return (
       <TableCell>
         {Array.isArray(values) && values.map((value) => (
-          <Chip key={value} label={value} sx={{ backgroundColor: "#7290df", color: "white", margin: "5px" }}></Chip>
+          <Chip key={value} label={value} sx={{ backgroundColor: "#7290df", color: "white", margin: "5px",fontSize:"15px" }}></Chip>
         ))}
 
       </TableCell>

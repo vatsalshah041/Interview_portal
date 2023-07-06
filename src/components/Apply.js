@@ -194,7 +194,7 @@ function Apply() {
               <Grid container >
                 <Grid item xs={3} lg={3} md={3}  >
                 <input type="checkbox" style={{marginLeft:"4vw",marginTop:"2.7rem"}} className="cont" value={1} onChange={handle}/>
-                <span></span>
+                <span className='tp'></span>
                 </Grid>
                 <Grid item xs={9} lg={9} md={9}>
                 <Typography align="left" sx={{ paddingLeft: "3.3rem",marginLeft:"0.7rem", paddingTop: ".2rem" ,fontSize:"1.15rem"}}>
@@ -227,7 +227,7 @@ function Apply() {
               <Grid container >
                 <Grid item xs={3} lg={3} md={3}  >
                 <input type="checkbox" style={{marginLeft:"4vw",marginTop:"2.7rem"}} className="cont" value={2} onChange={handle}/>
-                <span></span>
+                <span className='tp'></span>
                 </Grid>
                 <Grid item xs={9} lg={9} md={9}>
                 <Typography align="left" sx={{paddingLeft: "3.3rem",marginLeft:"0.7rem", paddingTop: "1rem",fontSize:"1.15rem" }}>
@@ -261,7 +261,7 @@ function Apply() {
               <Grid container >
                 <Grid item xs={3} lg={3} md={3}  >
                 <input type="checkbox" style={{marginLeft:"4vw",marginTop:"2.7rem"}} className="cont" value={3} onChange={handle}/>
-                <span></span>
+                <span className='tp'></span>
                 </Grid>
                 <Grid item xs={9} lg={9} md={9}>
                 <Typography align="left" sx={{ paddingLeft: "3.3rem",marginLeft:"0.7rem", paddingTop: "1rem",fontSize:"1.15rem" }}>
@@ -294,7 +294,7 @@ function Apply() {
               <Grid container >
                 <Grid item xs={3} lg={3} md={3}  >
                 <input type="checkbox" style={{marginLeft:"4vw",marginTop:"2.7rem"}} className="cont" value={4} onChange={handle}/>
-                <span></span>
+                <span className='tp'></span>
                 </Grid>
                 <Grid item xs={9} lg={9} md={9}>
                 <Typography align="left" sx={{ paddingLeft: "3.3rem",marginLeft:"0.7rem", paddingTop: "1rem" ,fontSize:"1.15rem"}}>
@@ -327,7 +327,7 @@ function Apply() {
               <Grid container >
                 <Grid item xs={3} lg={3} md={3}  >
                 <input type="checkbox" style={{marginLeft:"4vw",marginTop:"2.7rem"}} className="cont" value={5} onChange={handle}/>
-                <span></span>
+                <span className='tp'></span>
                 </Grid>
                 <Grid item xs={9} lg={9} md={9}>
                 <Typography align="left" sx={{ paddingLeft: "3.3rem",marginLeft:"0.7rem", paddingTop: "1rem",fontSize:"1.15rem" }}>
@@ -360,7 +360,7 @@ function Apply() {
               <Grid container >
                 <Grid item xs={3} lg={3} md={3}  >
                 <input type="checkbox" style={{marginLeft:"4vw",marginTop:"2.7rem"}} className="cont" value={6} onChange={handle}/>
-                <span></span>
+                <span className='tp'></span>
                 </Grid>
                 <Grid item xs={9} lg={9} md={9}>
                 <Typography align="left" sx={{ paddingLeft: "3.3rem",marginLeft:"0.7rem", paddingTop: "1rem" ,fontSize:"1.15rem"}}>
@@ -392,7 +392,7 @@ function Apply() {
               <Grid container >
                 <Grid item xs={3} lg={3} md={3}  >
                 <input type="checkbox" style={{marginLeft:"4vw",marginTop:"2.7rem"}} className="cont" value={7} onChange={handle}/>
-                <span></span>
+                <span className='tp'></span>
                 </Grid>
                 <Grid item xs={9} lg={9} md={9}>
                 <Typography align="left" sx={{ paddingLeft: "3.3rem",marginLeft:"0.7rem", paddingTop: "1rem" ,fontSize:"1.15rem"}}>

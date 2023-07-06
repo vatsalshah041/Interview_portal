@@ -94,7 +94,7 @@ export default function BasicTabs() {
     <Card className={classes.card1}>        
           <AppBar position="static" color="inherit" sx={{ width: "100vw",borderRadius:"6px !important"}}>
             <Tabs
-              sx={{width:"100vw"}}
+              sx={{maxWidth:"1000vw"}}
               variant="scrollable"
               allowScrollButtonsMobile
               value={value}

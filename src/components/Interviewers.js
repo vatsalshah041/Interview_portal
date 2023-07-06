@@ -62,11 +62,11 @@ export default function Interviewers(props) {
               <>
               {/* {console.log(interviewer)} */}
               <Item sx={{backgroundImage:'url("photo.jpg")'}}>
-                <img src="photo.jpg"></img>
-              <div className="class1">
+                <img className="profileinterviewer" src="photo.jpg"></img>
+              <div className="class1234">
               <b>{interviewer.role}</b>
               <br></br>
-              <span>{interviewer.user.name}</span>
+              <span className="stackname">{interviewer.user.name}</span>
 
               </div>
 
