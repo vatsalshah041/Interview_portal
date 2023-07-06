@@ -48,7 +48,7 @@ const Dashboard = () => {
         className={classes.flexItem}
         sx={{ paddingTop: "7vh", marginLeft: "1.5vw !important" }}
       >
-        <Grid item spacing={3} xs={12} md={3} lg={3}>
+        <Grid item spacing={3} xs={12} md={4} lg={3}>
           <Grid
             item
             xs={12}
@@ -73,9 +73,10 @@ const Dashboard = () => {
           spacing={1}
           
           xs={12}
-          md={3}
+          md={4}
           lg={4}
           sx={{
+            marginLeft:"2vw",
             borderRadius:"10px",
             marginBottom: "2vh !important",
             borderRadius: "8px",
@@ -89,7 +90,7 @@ const Dashboard = () => {
           <Divider className={classes.dividerColor} variant="middle" />
           <img src={timeline} className="timeline-img" />
         </Grid>
-        <Grid item spacing={3} xs={12} md={3} lg={3}>
+        <Grid item spacing={3} xs={12} md={4} lg={3}>
           <Grid
             item
             xs={12}
@@ -109,7 +110,7 @@ const Dashboard = () => {
             <NoOfApp />
           </Grid>
         </Grid>
-        <Grid item xs={12} lg={12} md={12} sx={{ margin: "2vh !important" }} >
+        <Grid item xs={12} lg={12} md={12} sx={{ margin: "2vw !important" }} >
           <TabPanel />
         </Grid>
       </Grid>

@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
   },
   [theme.breakpoints.down("sm")]: {
     entireGrid: {
-      marginLeft: "-10px!important",
+     // marginLeft: "-10px!important",
     },
     card1:{
-      width:"80vw",
+      //width:"80vw",
     }
   },
 
@@ -36,16 +36,17 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px!important",
     paddingTop: "6%",
     paddingLeft: "6%",
-    paddingRight: "6%",
+    paddingRight: "12%",
     paddingBottom: "6%",
-    width:"21rem",
+    maxWidth:"40rem"
+    // width:"21rem",
   },
 }));
 const ProfileProgress = (props) => {
   console.log(props.value);
   const classes = useStyles();
   return (
-    <Grid item xs={12} >
+    <Grid item xs={12} md={12}>
       <Card className={classes.card1} >
       <Grid container className={classes.entireGrid} spacing={2} xs={12} >
         <Grid item xs={2} lg={2} className={classes.flexItem}>
