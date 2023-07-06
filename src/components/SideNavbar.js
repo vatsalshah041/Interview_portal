@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import NarrowDrawer from "./NarrowDrawer";
+import { Button, Typography } from "@mui/material";
+//import NarrowDrawer from "./NarrowDrawer";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import BroadDrawer from "./BroadDrawer";
+import '../styles/BroadDrawer.css';
+import MenuIcon from '@mui/icons-material/Menu';
+
 import { Grid } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
@@ -13,6 +17,11 @@ const drawerWidth = 240;
 const narrowDrawerWidth = 60;
 
 function ResponsiveDrawer(props) {
+  const [toggle,setToggle]=useState(true);
+    const handleToggle=(e)=>{
+      setToggle(!toggle);
+      console.log(toggle);
+    }
   const { windows } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
   const { children } = props;
@@ -28,11 +37,14 @@ function ResponsiveDrawer(props) {
     windows !== undefined ? () => windows().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <>
+    <MenuIcon onClick={handleToggle} className="togglee" sx={{marginLeft:"90vw",marginTop:"2vh"}} ></MenuIcon>
+    <Box  sx={{ display: "flex" }}>
       
-      {matches?(<><div>bye</div></>):(<><div>{console.log()}</div></>)}
-
+      {matches?(<><div></div></>):(<><div>{console.log()}</div></>)}
+      {toggle && 
       <Box
+        className="navbox"
         component="nav"
         sx={
           openDrawer
@@ -75,6 +87,8 @@ function ResponsiveDrawer(props) {
           </Drawer>
         
       </Box>
+}
+
       <Box
         component="main"
         sx={{
@@ -86,9 +100,13 @@ function ResponsiveDrawer(props) {
           padding: "0",
         }}
       >
+        
         {children}
+        
       </Box>
+      
     </Box>
+    </>
   );
 }
 

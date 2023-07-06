@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
@@ -16,8 +16,9 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import Paper from '@mui/material/Paper';
 import { Typography } from "@mui/material";
 import { Toolbar } from "@material-ui/core";
-import '../styles/BroadDrawer.css';
+ import '../styles/BroadDrawer.css';
 import { makeStyles } from "@mui/styles";
+import MenuIcon from '@mui/icons-material/Menu';
 const useStyles = makeStyles((theme) => ({
 
   dividerColor: {
@@ -29,12 +30,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function BroadDrawer() {
+  const [toggle,setToggle]=useState(true);
+  const handleToggle=(e)=>{
+    setToggle(!toggle);
+    console.log(toggle);
+  }
   const navigate = useNavigate();
   const classes = useStyles();
 
   return (
     <>
-    <Box sx={{backgroundColor:"#DADBFF", height:"100vh",borderRight:" solid 5px #7B5BBC"}}>
+    
+    <Box className="navbox" sx={{backgroundColor:"#DADBFF", height:"100vh",borderRight:" solid 5px #7B5BBC"}}>
 
     
       <Box className="logoBox">

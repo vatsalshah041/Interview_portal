@@ -33,11 +33,16 @@
  
 
  }
+.toggle-nav{
+  visibility: collapse;
+
+  
+ }
 .class1{
 
     
     background-size: cover;
-    
+    height:100vh;
     /* background-image: linear-gradient(to bottom right,  white, #D7B4F3); */
      background-image: linear-gradient(  to bottom right,#FFFFFF 25% , #DAE4FF , #EFE7FF  ,#D3C3FF );
 
@@ -45,4 +50,23 @@
 }
 .heading_profile{
   font-size: 35px !important;
+}
+@media screen and (max-width: 700px) {
+  .toggle-nav{
+    visibility: visible;
+    margin-left:5px !important;
+    padding-left:5px !important;
+   }
+
+   
+}
+
+@media screen and (max-width: 400px) {
+  .toggle-nav{
+    visibility: visible;
+    margin-left:5px !important;
+    padding-left:5px !important;
+    
+   }
+ 
 }

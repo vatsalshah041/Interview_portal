@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   card1: {
     marginLeft:"1.8rem",
     marginRight:"4vw",
-    height:"32vh",
+    maxHeight:"200vh",
     borderRadius: "10px!important",
   },
   divider: {

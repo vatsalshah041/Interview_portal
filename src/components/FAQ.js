@@ -1,10 +1,12 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Faq from "react-faq-component";
 import Typography from "@mui/material/Typography";
 import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import Box from "@mui/material/Typography";
 import ExpandIcon from "../images/3.png"
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 
 
@@ -69,25 +71,32 @@ const styles = {
 };
 
 export default function FAQ() {
+  const [toggle,setToggle]=useState(true);
+  const handleToggle=(e)=>{
+    setToggle(!toggle);
+    console.log(toggle);
+  }
   return (
-    <div>
-      <Grid container>
+    <div style={{backgroundColor:"#EFE8FF !important"}}>
+      <Grid container >
         <Grid
           item
           sm={12}
           md={12}
           
         >
-          <Box sx={{width:"100%",height:"20vh", backgroundColor:"#EFE8FF",marginTop:0,boxShadow:"0px 15px 10px -17px #111"}}>
-            <Typography sx={{fontWeight:"bold", paddingTop:"5vh",color:"#4F3A7B",fontSize:"2.5rem"}}>
+          <Box sx={{width:"100%",height:"20vh", backgroundColor:"#EFE8FF !important",marginTop:"0px !important",boxShadow:"0px 15px 10px -17px #111",zIndex:"-1"}}>
+          
+            <Typography variant="h2" sx={{fontWeight:"bold", paddingTop:"5vh",color:"#4F3A7B",fontSize:"4"}}>
               FAQs
             </Typography>
             <Typography sx={{color:"#4F3A7B",fontSize:"1.5rem"}}>
               Need Answers? Find them here...
             </Typography>
+            
           </Box>
-          <Box sx={{margin: "30px"}}> 
-          
+          <Box sx={{margin: "30px",}}> 
+          {/* <MenuIcon onClick={handleToggle} className="togglee" sx={{marginLeft:"90vw"}}></MenuIcon> */}
           <Faq data={data} styles={styles} config={config}/>
           </Box>
           

@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
    
   },
   card1: {
-    padding: "1%",
-    marginTop:"3px",
+    padding: "2%",
+    marginTop:"1px",
     boxShadow: "1px 1px 6px rgba(0, 0, 0, 0.25)!important",
    
   },
