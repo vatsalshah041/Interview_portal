@@ -108,7 +108,7 @@ export default function Profile() {
     async function makeRequest() {
       try {
         const response = await axios.request(config);
-        console.log(response.data[0])
+        //console.log(response.data)
         setUser(response.data);
         setInfo(response.data.user);
       } catch (error) {
@@ -132,7 +132,7 @@ export default function Profile() {
     async function makeRequest1() {
       try {
         const response = await axios.request(config1);
-        //console.log(response.data);
+        console.log(response.data.resume_link);
         setUser1(response.data);
       } catch (error) {
         console.log(error);
@@ -178,12 +178,12 @@ export default function Profile() {
                       value={info.name}
                       onChange={(e) => setInfo(prev => ({ ...prev, name: e.target.value }))}
                       disabled={edit}
-                      InputProps={{ disabled: edit }}
                       sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem",paddingLeft:"1rem" }}
                       className="input"
                       id="input-with-icon-textfield"
                       InputProps={{
                       disableUnderline: true,
+                      disabled: edit,
                       }}
                       type={"text"}
                       variant="standard" 
@@ -206,13 +206,10 @@ export default function Profile() {
                       autoComplete="off"
                       variant="standard"
                       type={"text"}
-                     
-                      className="input"
                       id="input-with-icon-textfield"
                       InputProps={{
                       disableUnderline: true,
                       }}
-                      autoComplete="off"
                       sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem" ,paddingLeft:"1rem"}}
                     ></TextField>
 
@@ -229,12 +226,12 @@ export default function Profile() {
                       value={info.grad_year}
                       onChange={(e) => setInfo(prev => ({ ...prev, grad_year: e.target.value }))}
                       disabled
-                      InputProps={{ disabled: edit }}
                       // value={user.sapid}
                       className="input"
                       id="input-with-icon-textfield"
                       InputProps={{
                       disableUnderline: true,
+                      disabled:edit,
                       }}
                       type={"text"}
                       variant="standard"
@@ -261,12 +258,9 @@ export default function Profile() {
                       onChange={(e) => setInfo(prev => ({ ...prev, email: e.target.value }))}
                       //onChange={(e) => setUser({ ...user, name: e.target.value })}
                       disabled
-                      InputProps={{ disabled: edit }}
+                      InputProps={{ disabled: edit ,disableUnderline: true,}}
                       className="input"
                       id="input-with-icon-textfield"
-                      InputProps={{
-                      disableUnderline: true,
-                      }}
                       autoComplete="off"
                       type={"text"}
                       variant="standard"
@@ -284,14 +278,14 @@ export default function Profile() {
                       className="input"
                       id="input-with-icon-textfield"
                       // value={user1.resume_link}
-                      value={info.resume_link}
+                      value={user1.resume_link}
                       onChange={(e) => setInfo(prev => ({ ...prev, resume_link: e.target.value }))}
                       disabled
-                      InputProps={{ disabled: edit }}
                       sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem" ,paddingLeft:"1rem",}}
                       fullWidth
                       InputProps={{
                         disableUnderline: true,
+                        disabled:edit
                         }}
                         autoComplete="off"
                         type={"text"}
@@ -317,9 +311,9 @@ export default function Profile() {
                           id="input-with-icon-textfield"
                           InputProps={{
                           disableUnderline: true,
+                          disabled:edit,
                           }}
                           autoComplete="off"
-                          InputProps={{ disabled: edit }}
                           value={pass}
                           sx={{ marginTop: "0vh", paddingTop: "0vh",marginLeft:"5rem !important",marginLeft:"0.7rem" ,paddingLeft:"1rem" }}
                           onChange={(e) => setPass(e.target.value)}
