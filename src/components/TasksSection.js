@@ -89,7 +89,7 @@ export default function BasicTabs() {
   return (
     <>
    
-    <Typography className={classes.header} id="tasks-mobile-heading" variant="h3" sx={{paddingBottom:"0.5rem",paddingLeft:"2.2rem"}}>
+    <Typography className={classes.header} id="tasks-mobile-heading" variant="h3" sx={{paddingBottom:"0.5rem",paddingLeft:"2.2rem",fontFamily:"Poppins",fontWeight:"bold"}}>
     <strong>Tasks</strong>
     </Typography>
     <Card className={classes.card1} id="tasks-mobile-card">        

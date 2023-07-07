@@ -7,6 +7,29 @@
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     }
+    .header-apply{
+      font-size:1.5rem !important;
+    }
+    .apply-mobile-button{
+      padding:1%;
+      font-size:1rem !important;
+    }
+    .stack-mobile{
+      
+      padding-left:5vw !important;
+    }
+    .stack-mobile-resume{
+      
+      padding-left:15vw !important;
+    }
+    .stack-mobile-git{
+      
+      padding-left:15vw !important;
+    }
+    .input-resume{
+      margin-left:14vw!important;
+      margin-right:6vw!important;
+    }
 
   }
   
@@ -108,5 +131,88 @@
    span {
     font-size: 2rem;
    }
+
+   .input-resume {
+    border: none;
+
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #eeecec,
+    inset -3px -3px 7px #fafafa,
+    inset 3px 3px 7px rgba(199, 206, 219, 0.945);    
+
+    width:82%;
+
+
+   }
+
+   .input-resume:focus {
+    outline-color: #e8e8e8;
+
+    color: #595959;
+
+    box-shadow: inset 1px 1px 2px #BABECC,
+           inset -1px -1px 2px #ffffff73;
+   
+
+   }
+
+   input[type="checkbox"] {
+    height: 33px;
+    width: 33px;
+    display: inline-block;
+    appearance: none;
+    position: relative;
+    border-radius: 3.5px;
+    background: #ffffff;
+    box-shadow:  inset 3px 3px 8px rgba(199, 206, 219, 0.945),
+              inset -3px -3px 6px #ffffff;
+     
+
+    cursor: pointer;
+    overflow: hidden;
+   }
+   
+   input[type="checkbox"]::after {
+    content: '';
+    display: block;
+    height: 0.9rem;
+    width: .4rem;
+    border-bottom: .2rem solid #FFFFFF;
+    border-right: .2rem solid #FFFFFF;
+    opacity: 0;
+    transform: rotate(45deg) translate(-50%, -50%);
+    position: absolute;
+    top: 45%;
+    left: 21%;
+    transition: .25s ease;
+   }
+   
+   input[type="checkbox"]::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    background-color: #5154CE;
+    border-radius: 50%;
+    opacity: .5;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: .3s ease;
+   }
+   
+   input[type="checkbox"]:checked::before {
+    height: 130%;
+    width: 130%;
+    opacity: 100%;
+   }
+   
+   input[type="checkbox"]:checked::after {
+    opacity: 100%;
+   }
+
+
+
 
 

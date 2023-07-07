@@ -2,6 +2,7 @@ import React from "react";
 import ProgressCircle from "../components/ProgressCircle";
 import { Card, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import '../styles/profileprogress.css'
 const useStyles = makeStyles((theme) => ({
   flexItem: {
     display: "flex",
@@ -38,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "6%",
     paddingRight: "12%",
     paddingBottom: "6%",
-    maxWidth:"40rem"
-    // width:"21rem",
+    maxWidth:"40rem",
+    width:"21rem",
   },
 }));
 const ProfileProgress = (props) => {
@@ -47,14 +48,14 @@ const ProfileProgress = (props) => {
   const classes = useStyles();
   return (
     <Grid item xs={12} md={12}>
-      <Card className={classes.card1} >
+      <Card className={classes.card1} id="profile-progress-mobile" >
       <Grid container className={classes.entireGrid} spacing={2} xs={12} >
         <Grid item xs={2} lg={2} className={classes.flexItem}>
           <ProgressCircle />
         </Grid>
         <Grid item xs={10} lg={10}>
           <Typography sx={{paddingTop:"0.5rem", fontSize: "16px!important"}}>
-            Your profile is still 20% incomplete
+            Your profile is still 20% incomplete.
           </Typography>
         </Grid>
       </Grid>
