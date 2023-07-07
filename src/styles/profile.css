@@ -14,7 +14,7 @@
 .input {
   border: none;
   background-color: #fafafa !important;
-  border-radius: 12px;
+  border-radius: 12px !important;
   box-shadow: 0.2px 0.2px 3px #eeecec ,
   inset -3px -3px 7px #fafafa,
   inset 3px 3px 7px rgba(199, 206, 219, 0.945);    
@@ -43,6 +43,7 @@
     
     background-size: cover;
     height:100vh;
+    
     /* background-image: linear-gradient(to bottom right,  white, #D7B4F3); */
      background-image: linear-gradient(  to bottom right,#FFFFFF 25% , #DAE4FF , #EFE7FF  ,#D3C3FF );
 
@@ -56,6 +57,10 @@
     visibility: visible;
     margin-left:5px !important;
     padding-left:5px !important;
+   }
+
+   .class1{
+    padding-right:4vw !important;
    }
 
    

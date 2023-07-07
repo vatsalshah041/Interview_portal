@@ -38,7 +38,7 @@ function ResponsiveDrawer(props) {
 
   return (
     <>
-    <MenuIcon onClick={handleToggle} className="togglee" sx={{marginLeft:"90vw",marginTop:"2vh"}} ></MenuIcon>
+    <MenuIcon onClick={handleToggle} className="togglee" sx={{marginLeft:"85vw",marginTop:"2vh"}} ></MenuIcon>
     <Box  sx={{ display: "flex" }}>
       
       {matches?(<><div></div></>):(<><div>{console.log()}</div></>)}

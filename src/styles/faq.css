@@ -1,0 +1,10 @@
+
+@media screen and (max-width: 700px) {
+    .faq-description-mobile{
+        font-size:20px !important;
+    }
+    .faq-header-mobile{
+        font-size:30px !important;
+    }
+   
+  }

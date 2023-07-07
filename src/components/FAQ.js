@@ -6,6 +6,7 @@ import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import Box from "@mui/material/Typography";
 import ExpandIcon from "../images/3.png"
 import MenuIcon from '@mui/icons-material/Menu';
+import '../styles/faq.css'
 
 
 
@@ -87,10 +88,10 @@ export default function FAQ() {
         >
           <Box sx={{width:"100%",height:"20vh", backgroundColor:"#EFE8FF !important",marginTop:"0px !important",boxShadow:"0px 15px 10px -17px #111",zIndex:"-1"}}>
           
-            <Typography variant="h2" sx={{fontWeight:"bold", paddingTop:"5vh",color:"#4F3A7B",fontSize:"4"}}>
+            <Typography variant="h2" className="faq-header-mobile" sx={{fontWeight:"bold", paddingTop:"5vh",color:"#4F3A7B",fontSize:"4"}}>
               FAQs
             </Typography>
-            <Typography sx={{color:"#4F3A7B",fontSize:"1.5rem"}}>
+            <Typography sx={{color:"#4F3A7B",fontSize:"1.5rem"}} className="faq-description-mobile">
               Need Answers? Find them here...
             </Typography>
             

@@ -50,6 +50,7 @@ const Dashboard = () => {
       >
         <Grid item spacing={3} xs={12} md={4} lg={3}>
           <Grid
+            className="mobile-res"
             item
             xs={12}
             md={12}
@@ -59,6 +60,7 @@ const Dashboard = () => {
             <ProfileProgress />
           </Grid>
           <Grid
+            className="mobile-res"
             item
             xs={12}
             md={12}
@@ -71,12 +73,13 @@ const Dashboard = () => {
         <Grid
           item
           spacing={1}
-          
+          className="mobile-res"
           xs={12}
           md={4}
           lg={4}
           sx={{
-            marginLeft:"2vw",
+            
+            //marginRight:"6vw !important",
             borderRadius:"10px",
             marginBottom: "2vh !important",
             borderRadius: "8px",
@@ -92,15 +95,17 @@ const Dashboard = () => {
         </Grid>
         <Grid item spacing={3} xs={12} md={4} lg={3}>
           <Grid
+            className="mobile-res-apply"
             item
             xs={12}
             md={12}
             lg={12}
-            sx={{ marginBottom: "2vh !important" }}
+            sx={{ marginBottom: "2vh !important"}}
           >
             <ApplyCard />
           </Grid>
           <Grid
+            className="mobile-res-noofapp"
             item
             xs={12}
             md={12}
@@ -110,7 +115,7 @@ const Dashboard = () => {
             <NoOfApp />
           </Grid>
         </Grid>
-        <Grid item xs={12} lg={12} md={12} sx={{ margin: "2vw !important" }} >
+        <Grid className="mobile-res-tasks" item xs={12} lg={12} md={12} sx={{ margin: "2vw !important" }} >
           <TabPanel />
         </Grid>
       </Grid>

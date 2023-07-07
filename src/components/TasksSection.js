@@ -9,6 +9,7 @@ import { Card, Divider, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import axios from "axios";
 import TaskData from "./TaskData";
+import '../styles/tasks.css'
 
 const useStyles = makeStyles((theme) => ({
   flexItem: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   header: {
-    paddingLeft:"1.15rem",
+    //paddingLeft:"1.15rem",
     color:"#4F3A7B",
     fontFamily:"Poppins",
     display: "flex",
@@ -88,26 +89,32 @@ export default function BasicTabs() {
   return (
     <>
    
-    <Typography className={classes.header} variant="h3" sx={{paddingBottom:"0.5rem",paddingLeft:"2.2rem"}}>
+    <Typography className={classes.header} id="tasks-mobile-heading" variant="h3" sx={{paddingBottom:"0.5rem",paddingLeft:"2.2rem"}}>
     <strong>Tasks</strong>
     </Typography>
-    <Card className={classes.card1}>        
+    <Card className={classes.card1} id="tasks-mobile-card">        
           <AppBar position="static" color="inherit" sx={{ width: "100vw",borderRadius:"6px !important"}}>
             <Tabs
-              sx={{width:"100vw"}}
+              scrollButtons={true}
               variant="scrollable"
+
+              scrollButtons="auto"
+              scrollButtons
               allowScrollButtonsMobile
+              aria-label="scrollable force tabs example"
+              sx={{width:"100vw"}}
+              
               value={value}
               onChange={handleChange}
               classes={classes}
-              aria-label="simple tabs example"
+            
             >
-              <Tab label="Frontend" {...a11yProps(0)} />
+              <Tab className="reserved-space" label="Frontend" {...a11yProps(0)} />
               <Tab label="Django" {...a11yProps(1)} />
               <Tab label="Node" {...a11yProps(2)} />
               <Tab label="Flutter" {...a11yProps(3)} />
               <Tab label="React Native" {...a11yProps(4)} />
-              <Tab label="Design" {...a11yProps(5)} />
+              <Tab className="reserved-space" label="Design" {...a11yProps(5)} />
             </Tabs>
           </AppBar>
         <Grid sx={{ padding: { xs: 2, md: 0 } }}>
