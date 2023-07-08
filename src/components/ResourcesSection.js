@@ -102,6 +102,13 @@ export default function Resources() {
             <Grid item>
               <AppBar position="static" color="inherit" sx={{ width: "100%" }}>
                 <Tabs
+                  scrollButtons={true}
+                  variant="scrollable"
+    
+                  scrollButtons="auto"
+                  scrollButtons
+                  allowScrollButtonsMobile
+                  aria-label="scrollable force tabs example"
                   sx={{width:"65vw"}}
                   value={value}
                   onChange={handleChange}

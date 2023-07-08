@@ -11,6 +11,7 @@ import AdminPanel from "./pages/AdminPanel";
 import FaqPage from "./pages/FaqPage";
 import ScorePage from "./pages/ScorePage";
 import Scorecard from "./components/Scorecard";
+import Q from "./components/Q";
 
 function App() {
   const PrivateRoute = () => {
@@ -23,6 +24,7 @@ function App() {
         <Routes>
 
           <Route path="/login" element={<LoginSignup />} />
+          <Route path="/q" element={<Q />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/" element={<LoginSignup />} />
 

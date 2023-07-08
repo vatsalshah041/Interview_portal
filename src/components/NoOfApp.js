@@ -2,6 +2,7 @@ import { Card, Divider, Grid, Typography,Button} from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
+import '../styles/NoofApp.css'
 const useStyles = makeStyles((theme) => ({
   flexItem: {
     justifyContent: "left",
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft:"-2vw !important",
       marginTop:"1.3vw !important",
       paddingTop:"1vh !important",
-      paddingBottom:"3vh !important",
+      paddingBottom:"5vh !important",
       width:"20vw",
       borderRadius: "",
       borderColor:"red",
@@ -43,7 +44,7 @@ const NoOfApp = () => {
   const classes = useStyles();
   const navigate=useNavigate();
   return (
-    <Card className={classes.card1}>
+    <Card className={classes.card1} id="mobile-res-noofappp">
       <Grid container item className={classes.flexItem} rowSpacing="7">
         <Grid item>
         <Typography sx={{textAlign:"left",fontSize:"1.3em",paddingLeft:"1vw",paddingTop:"2.1vh"}}>

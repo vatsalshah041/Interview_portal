@@ -1,0 +1,11 @@
+
+
+@media screen and (max-width: 600px){
+    #profile-progress-mobile{
+            /* padding-left:4vw !important;
+            padding-right:5vw !important;
+            margin-right:3vw!important;
+    } */
+     width:22.5rem !important;
+ }
+}

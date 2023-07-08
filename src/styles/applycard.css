@@ -1,0 +1,10 @@
+@media screen and (max-width: 600px) {
+
+    #mobile-res-apply{
+        padding-bottom:5vh !important;
+       
+        margin-right:5vh !important;
+        margin-left:1vh !important;
+    }
+    
+}

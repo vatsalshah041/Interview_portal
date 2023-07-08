@@ -2,6 +2,7 @@ import { Card, Divider, Grid, Typography,Button} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
+import '../styles/applycard.css'
 const useStyles = makeStyles((theme) => ({
   flexItem: {
     justifyContent: "left",
@@ -84,7 +85,7 @@ makeRequest();
     <>
     {(allow || !allow)?<>
     
-      <Card className={classes.card1}>
+      <Card className={classes.card1} id="mobile-res-apply">
       <Grid container item className={classes.flexItem} rowSpacing="8">
         <Grid item>
         <Typography sx={{textAlign:"left",fontSize:"1.3em",paddingLeft:"1vw",paddingTop:"2.1vh"}}>
@@ -94,9 +95,9 @@ makeRequest();
         <Grid item xs={12}>
           <Divider className={classes.dividerColor} variant="middle" />
         </Grid>
-        <Grid item xs={12}>
-          <Typography className={classes.text} >
-            <Button onClick={()=>{navigate('/applicationform')}} sx={{borderRadius:"10px",border:" solid 3px white",boxShadow:"0 6px 20px 0 rgba(0, 0, 0, 0.19)",backgroundColor:"#5154CE",color:"white",
+        <Grid item xs={12} >
+          <Typography className={classes.text}  >
+            <Button  onClick={()=>{navigate('/applicationform')}} sx={{borderRadius:"10px",border:" solid 3px white",boxShadow:"0 6px 20px 0 rgba(0, 0, 0, 0.19)",backgroundColor:"#5154CE",color:"white",
                 marginTop:"1.3rem",
                 "&:hover": {
                     color: 'white',

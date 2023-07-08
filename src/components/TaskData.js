@@ -92,10 +92,10 @@ const TaskData = (props) => {
         >
           <Box
             sx={{
-              width: { xs: 31, md: 80 },
-              height: { xs: 31, md: 80 },
+              width: { xs: 31, md: 60 },
+              height: { xs: 31, md: 60 },
               borderRadius: 50,
-              backgroundColor: "#09c1d7",
+              backgroundColor: "#9092DC",
               textAlign: "center",
               verticalAlign: "center",
               mt: 2,
@@ -107,10 +107,10 @@ const TaskData = (props) => {
               variant="h2"
               sx={{
                 color: "white",
-                width: { xs: 31, md: 80 },
-                height: { xs: 31, md: 80 },
+                width: { xs: 31, md: 60 },
+                height: { xs: 31, md: 60 },
                 borderRadius: 50,
-                mt: { xs: 1, md: 2 },
+                mt: { xs: 1, md: 1 },
               }}
             >
               {item.stack === props.stack ? item.id : "01"}
@@ -123,7 +123,7 @@ const TaskData = (props) => {
             }}
           >
             <CardContent sx={{ flex: "1 0 auto" }}>
-              <Typography variant="h5" sx={{ textAlign: "left" }}>
+              <Typography  sx={{ textAlign: "left",fontSize:"20px",fontWeight:"bold" ,fontFamily:"Poppins"}}>
                 {item.stack === props.stack
                   ? item.task_question
                   : "Question"}
@@ -133,6 +133,7 @@ const TaskData = (props) => {
                 color="text.secondary"
                 component="div"
                 sx={{
+                  fontFamily:"Poppins",
                   textAlign: "left",
                   display: { xs: "none", sm: "block" },
                 }}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import axios from "axios";
 import Loader from "./Loader";
+import '../styles/resources.css'
 
 const ResourcesData = (props) => {
 	const [loading, setLoading] = useState(true);
@@ -42,9 +43,10 @@ const ResourcesData = (props) => {
 					<React.Fragment key={i}>
 						{/* <span>{item.name === props.stack ? item.name : ""}</span> */}
 						<iframe
+						className="resource-mobile"
 						onLoad={handleIframeLoad}
 							src={item.name === props.stack ? item.resources :""}
-							width="100%"
+							width="90%"
 							height="1000px"
 							// style={{ display: loading ? "none" : "block" }}
 						/>

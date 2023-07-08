@@ -7,8 +7,8 @@
 #cover-dashboard-div{
     height:100%;
     
-    background-image: url("../images/image4.png");
-    background-size: cover; 
+    /* background-image: url("../images/image4.png");
+    background-size: cover;  */
   
    }
 @media screen and (max-width: 600px) {
@@ -26,5 +26,18 @@
         background-image: url("../images/image4.png");
         background-size: cover; 
        }
+       .mobile-res{
+        margin-right:5vh !important;
+        margin-left:2vh !important;
+       }
+       .mobile-res-noofapp{
+        margin-right:5vh !important;
+        margin-left:1vh !important;
+       }
+       /* .mobile-res-tasks{
+        margin-right:20vw !important;
+        margin-left:1vw !important;
+       } */
+       
     
 }
