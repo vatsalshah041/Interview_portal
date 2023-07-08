@@ -96,6 +96,7 @@ export default function BasicTabs() {
           <AppBar position="static" color="inherit" sx={{ width: "100vw",borderRadius:"6px !important"}}>
             <Tabs
               scrollButtons={true}
+              sx={{maxWidth:"1000vw"}}
               variant="scrollable"
 
               scrollButtons="auto"

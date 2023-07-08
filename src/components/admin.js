@@ -74,7 +74,6 @@ let config = {
         const response = await axios.request(config);
         console.log((response.data));
         setUser(response.data)
-        console.log((response.data));
       }
       catch (error) {
         console.log(error);
@@ -97,10 +96,7 @@ let config = {
         <div style={{ clear: "both" }}>
           <Tabs value={value} onChange={handleChange} centered>
             {stackName.map((item, index) => (
-              <>
-              {console.log(item)}
               <Tab label={item} key={index} />
-              </>
             ))}
           </Tabs>
           <Button

@@ -8,6 +8,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Loader from './Loader';
+import Question from './Question';
 
 
 
@@ -16,7 +17,8 @@ export default function Scorecard() {
   const s = localStorage.getItem("sapmod")
   const token = localStorage.getItem("token")
   const [qtype, setQtype] = React.useState(1);
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState('1');
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -40,9 +42,10 @@ const [stackItems,setStackItems]=useState();
     async function makeRequest() {
       try {
         const response = await axios.request(config);
-        //console.log(response.data);
+        console.log(response.data);
+        console.log(response.data.interviewee.application.stack);
         setUser(response.data)
-        setStackItems((response.data).interviewee.application.stack);
+        setStackItems(response.data.interviewee.application.stack);
       }
       catch (error) {
         console.log(error);
@@ -56,7 +59,7 @@ const [stackItems,setStackItems]=useState();
   
   return (
     <>
-      {user ? <>
+      {user && stackItems ? <>
       
 
         <Grid container >
@@ -91,41 +94,36 @@ const [stackItems,setStackItems]=useState();
         </Grid>
 
         <Grid container>
-          {(stackItems.length>0)?<>
-            {console.log(stackItems)}
-            <Box sx={{ width: '100%', typography: 'body1' }}>
-      <TabContext key={value.toString()} value={value}>
+        <Grid item md={12} sx={{ padding: "10px", backgroundColor: "", marginTop: "5vw", marginLeft: "5vw", marginRight: "5vw" }}>
+        <Box sx={{ width: '100%', typography: 'body1' }}>
+      <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
-            {(stackItems).map((k,i)=>{
-              {console.log(k);}
+            {stackItems.map((k,i)=>{
+              console.log(typeof(i+1));
+              let si=(i+1).toString();
               return(
-                <>
-                <Tab label={k.name} value={(i+1).toString()} key={(i+1).toString()} />
-                </>
+                
+                <Tab label={k.name} value={si} />
+               
               )
             })}
           </TabList>
         </Box>
-        {(stackItems).map((k,i)=>{
-              return(
-                <>
-                <TabPanel value={(i+1).toString()} key={(i+1).toString()}>{k.name}</TabPanel>
-                </>
-              )
-            })}
+        {stackItems.map((k,i)=>{
+          let si=(i+1).toString();
+          return(
+           
+            <TabPanel value={si}><Question stname={k.name}/></TabPanel>
+            
+          )
+        })}
       </TabContext>
     </Box>
-          
-          </>:<></>}
+        </Grid>
         
 
-<Grid item md={12} sx={{ padding: "10px", backgroundColor: "#7290df", marginTop: "5vw", marginLeft: "5vw", marginRight: "5vw", borderTopLeftRadius: "15px", borderTopRightRadius: "15px" }}>
-            <Typography variant="h4"></Typography>
-          </Grid>
-          <Grid item md={12} sx={{ marginLeft: "5vw", marginRight: "5vw" }}>
-            
-          </Grid>
+
         </Grid>
       </> : <><Loader></Loader></>}
     </>
