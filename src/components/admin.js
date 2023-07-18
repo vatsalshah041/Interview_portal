@@ -19,41 +19,6 @@ export default function CollapsibleTable() {
     setValue(newValue);
   };
 
-
-  // const [user, setUser] = useState([
-  //   {
-  //     id: "0",
-  //     interviewees: [
-  //       {
-  //         id: "0",
-  //         application: {
-  //           stack: [{ name: "", repo_link: "" }],
-  //           resume_link: "",
-  //         },
-  //         user: {
-  //           email: "",
-  //           sapid: "",
-  //           grad_year: "",
-  //           name: "",
-  //         },
-  //       },
-  //     ],
-  //     interviewers: [
-  //       {
-  //         id: "0",
-  //         role: "Fullstack",
-  //         stack: 1,
-  //         user: {
-  //           email: "",
-  //           sapid: "",
-  //           grad_year: 2020,
-  //           name: "",
-  //         },
-  //       },
-  //     ],
-  //     name: "Panel",
-  //   },
-  // ]);
   const [user,setUser]=useState([])
 const token='Token '+localStorage.getItem("token")
 

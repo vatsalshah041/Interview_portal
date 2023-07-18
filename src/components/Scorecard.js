@@ -9,7 +9,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Loader from './Loader';
 import Question from './Question';
-
+import Q from './Q';
 
 
 export default function Scorecard() {
@@ -114,7 +114,7 @@ const [stackItems,setStackItems]=useState();
           let si=(i+1).toString();
           return(
            
-            <TabPanel value={si}><Question stname={k.name}/></TabPanel>
+            <TabPanel value={si}><Q stname={k.name}/></TabPanel>
             
           )
         })}
