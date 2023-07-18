@@ -50,7 +50,7 @@ makeRequest();
     <div>
       <Box
         sx={{
-          marginLeft: "8vw",
+          marginLeft: "2vw",
           marginTop: "5vh",
           marginRight: "5vw",
           width: "85%",
@@ -63,7 +63,7 @@ makeRequest();
       </Box>
       <Box
         sx={{
-          marginLeft: "8vw",
+          marginLeft: "2vw",
           marginRight: "5vw",
           backgroundColor: "white",
           boxShadow: "rgba(0, 0, 0, 0.24) 0px 2px 8px 0px",
