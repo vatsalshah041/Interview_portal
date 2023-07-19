@@ -69,7 +69,7 @@ const [stackItems,setStackItems]=useState();
           <Grid item md={12} sx={{ marginLeft: "5vw", marginRight: "5vw" }}>
             <Grid container>
               <Grid item md={6}>Sapid:{user.interviewee.user.sapid}</Grid>
-              <Grid item md={6}>Graduation Year:{user.interviewee.user.sapid}</Grid>
+              <Grid item md={6}>Graduation Year:{user.interviewee.user.grad_year}</Grid>
               <Grid item md={6}>Email Id:{user.interviewee.user.email}</Grid>
               <Grid item md={6}></Grid>
               <Grid item md={12}>Resume Link: <div style={{ color: 'blue' }}>{user.interviewee.application.resume_link}</div></Grid>
@@ -100,7 +100,7 @@ const [stackItems,setStackItems]=useState();
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
             {stackItems.map((k,i)=>{
-              console.log(typeof(i+1));
+              
               let si=(i+1).toString();
               return(
                 
@@ -114,7 +114,7 @@ const [stackItems,setStackItems]=useState();
           let si=(i+1).toString();
           return(
            
-            <TabPanel value={si}><Q stname={k.name}/></TabPanel>
+            <TabPanel value={si}><Q stname={k.name} sapid={user.interviewee.user.sapid}/></TabPanel>
             
           )
         })}
