@@ -19,20 +19,19 @@ const Q = (props) => {
     console.log(k);
 
     let token = localStorage.getItem("token");
-    let data = JSON.stringify({
-      "sapid": props.sapid,
-      "stack": props.stname,
-      "question_no": k,
-      "rating": e.target.value
-    });
-
+    const FormData = require('form-data');
+    let data = new FormData();
+    data.append('stack', props.stname);
+    data.append('question_no', k);
+    data.append('rating', e.target.value);
+    data.append('sapid', props.sapid);
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
       url: '//devacc3.pythonanywhere.com/accounts/score/',
-      headers: { 
-        'Authorization': 'Token ' + token, 
-        'Content-Type': 'application/json', 
+      headers: {
+        'Authorization': 'Token ' + token,
+        'Content-Type': 'application/json',
         'Cookie': 'csrftoken=uxlPQsLGxNdIMQruSrXWrOYRtt86ZhHRSj3yzs7OowdMhzMy2dskVVu8aOTVaNxk'
       },
       data: data
